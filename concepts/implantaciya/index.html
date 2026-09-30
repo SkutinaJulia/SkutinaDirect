@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Имплантация зубов - концепт</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Golos+Text:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#F2F7F6;--teal:#0F5C5A;--teal-l:#D5E9E6;--mint:#7FD1C1;--ink:#12302F;--white:#fff}
+*{box-sizing:border-box;margin:0}
+body{background:var(--bg);color:var(--ink);font:400 17px/1.55 "Golos Text",sans-serif}
+.wrap{max-width:1180px;margin:0 auto;padding:0 24px}
+header{display:flex;justify-content:space-between;align-items:center;padding:20px 0}
+.logo{font-weight:800;font-size:20px;color:var(--teal)}
+.logo span{font-weight:500;color:#4d6b69;font-size:14px;margin-left:8px}
+.call{color:var(--teal);font-weight:600;text-decoration:none}
+.hero{display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:start;padding:36px 0 64px}
+h1{font:800 clamp(36px,4.6vw,58px)/1.04 "Golos Text";letter-spacing:-.02em}
+.lead{margin:20px 0 0;max-width:32em;color:#3c5856}
+/* калькулятор */
+.calc{background:var(--white);border-radius:22px;padding:30px;box-shadow:0 20px 50px -30px rgba(15,92,90,.5)}
+.calc h2{font:700 20px "Golos Text";margin-bottom:18px}
+.row{display:flex;justify-content:space-between;align-items:center;margin-bottom:14px;font-size:15px}
+.seg{display:flex;background:var(--teal-l);border-radius:12px;padding:4px;gap:4px;margin-bottom:18px}
+.seg button{flex:1;border:0;background:transparent;padding:10px 6px;border-radius:9px;font:500 14px "Golos Text";color:var(--ink);cursor:pointer}
+.seg button[aria-pressed=true]{background:var(--teal);color:#fff}
+.seg button:focus-visible,.cnt button:focus-visible,.btn:focus-visible{outline:3px solid var(--mint);outline-offset:2px}
+.cnt{display:flex;align-items:center;gap:12px}
+.cnt button{width:36px;height:36px;border-radius:50%;border:1px solid var(--teal);background:#fff;color:var(--teal);font-size:20px;cursor:pointer}
+.cnt output{font-weight:700;min-width:1.5em;text-align:center}
+.total{border-top:1px dashed #b7d2ce;margin-top:10px;padding-top:16px}
+.total b{display:block;font:800 40px/1.1 "Golos Text";color:var(--teal)}
+.total small{color:#5d7775}
+.btn{display:block;width:100%;margin-top:18px;background:var(--teal);color:#fff;border:0;border-radius:14px;padding:17px;font:600 17px "Golos Text";text-align:center;text-decoration:none;cursor:pointer}
+.btn:hover{background:#0b4947}
+.trust{display:flex;gap:28px;flex-wrap:wrap;margin-top:34px}
+.trust div{font-size:14px;color:#3c5856}
+.trust b{display:block;font:700 26px "Golos Text";color:var(--ink)}
+section{padding:64px 0}
+h2.t{font:800 clamp(28px,3vw,38px)/1.1 "Golos Text";letter-spacing:-.01em;margin-bottom:26px}
+.incl{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.incl div{background:#fff;border-radius:16px;padding:22px;font-size:15px}
+.incl b{display:block;font-size:17px;margin-bottom:6px}
+.doc{display:grid;grid-template-columns:auto 1fr;gap:26px;align-items:center;background:var(--teal);color:#e6f3f1;border-radius:22px;padding:34px}
+.ava{width:120px;height:120px;border-radius:50%;background:radial-gradient(circle at 50% 38%,#cfe7e3 0 22%,transparent 23%),radial-gradient(ellipse at 50% 100%,#cfe7e3 0 45%,transparent 46%),#2a7a77}
+.doc h3{font:700 22px "Golos Text";color:#fff;margin-bottom:6px}
+footer{padding:30px 0 48px;font-size:14px;color:#5d7775}
+@media(max-width:900px){.hero{grid-template-columns:1fr}.incl{grid-template-columns:1fr 1fr}}
+@media(max-width:520px){.incl{grid-template-columns:1fr}.doc{grid-template-columns:1fr}.logo span,.call{display:none}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header><div class="logo">Дента Линия<span>стоматология</span></div><a class="call" href="#calc">+7 (000) 000-00-00</a></header>
+<main>
+<div class="hero">
+  <div>
+    <h1>Имплант с коронкой под ключ. Цена в договоре не меняется</h1>
+    <p class="lead">Посчитайте стоимость сами. На консультации сделаем снимок КТ бесплатно и подтвердим сумму письменно.</p>
+    <div class="trust">
+      <div><b>12 лет</b>опыт хирурга</div>
+      <div><b>3 400</b>установленных имплантов</div>
+      <div><b>0 ₽</b>КТ и консультация</div>
+    </div>
+  </div>
+  <div class="calc" id="calc">
+    <h2>Рассчитайте стоимость</h2>
+    <div class="seg" role="group" aria-label="Система имплантов">
+      <button type="button" aria-pressed="true" data-p="38000">Корея</button>
+      <button type="button" aria-pressed="false" data-p="52000">Израиль</button>
+      <button type="button" aria-pressed="false" data-p="79000">Швейцария</button>
+    </div>
+    <div class="row"><span>Сколько зубов восстановить</span>
+      <div class="cnt"><button type="button" id="minus" aria-label="Меньше">−</button><output id="n">1</output><button type="button" id="plus" aria-label="Больше">+</button></div>
+    </div>
+    <div class="total"><small>Имплант, абатмент и коронка из циркония</small><b id="sum">38 000 ₽</b></div>
+    <a class="btn" href="#calc">Записаться на бесплатное КТ</a>
+  </div>
+</div>
+<section>
+  <h2 class="t">Что входит в цену</h2>
+  <div class="incl">
+    <div><b>Снимок КТ</b>3D-снимок челюсти и план лечения</div>
+    <div><b>Операция</b>Установка импланта под местной анестезией</div>
+    <div><b>Коронка</b>Цирконий, подбор цвета под соседние зубы</div>
+    <div><b>Гарантия</b>Пожизненная на имплант, 5 лет на коронку</div>
+  </div>
+</section>
+<section>
+  <div class="doc">
+    <div class="ava" aria-hidden="true"></div>
+    <div><h3>Хирург-имплантолог, кандидат медицинских наук</h3><p>Сам ведет пациента от снимка до коронки. Операцию проводит за 40 минут, на следующий день можно работать.</p></div>
+  </div>
+</section>
+</main>
+<footer>Концепт лендинга · демо-макет · собрала JuliaDirect, реквизиты ставятся при запуске</footer>
+</div>
+<script>
+let price=38000,n=1;const f=v=>v.toLocaleString('ru-RU')+' ₽';
+function upd(){document.getElementById('n').textContent=n;document.getElementById('sum').textContent=f(price*n)}
+document.querySelectorAll('.seg button').forEach(b=>b.onclick=()=>{document.querySelectorAll('.seg button').forEach(x=>x.setAttribute('aria-pressed','false'));b.setAttribute('aria-pressed','true');price=+b.dataset.p;upd()});
+document.getElementById('plus').onclick=()=>{if(n<16)n++;upd()};document.getElementById('minus').onclick=()=>{if(n>1)n--;upd()};
+</script>
+</body>
+</html>

@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Студия пилатеса - концепт</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Prata&family=Manrope:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{--lilac:#E4DDF0;--plum:#4B3A6B;--rose:#F3C9C0;--milk:#FAF8FC;--ink:#2B2338}
+*{box-sizing:border-box;margin:0}
+body{background:var(--milk);color:var(--ink);font:400 17px/1.6 "Manrope",sans-serif}
+.wrap{max-width:1180px;margin:0 auto;padding:0 24px}
+header{display:flex;justify-content:space-between;align-items:center;padding:24px 0}
+.logo{font:26px "Prata",serif;color:var(--plum)}
+nav a{color:var(--ink);text-decoration:none;margin-left:22px;font-weight:500}
+.hero{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center;padding:30px 0 70px}
+h1{font:400 clamp(40px,5.4vw,70px)/1.05 "Prata",serif;color:var(--plum)}
+.lead{margin:24px 0 30px;max-width:27em}
+.btn{display:inline-block;background:var(--plum);color:#fff;text-decoration:none;padding:17px 30px;border-radius:999px;font-weight:700}
+.btn:hover{background:#3a2c55}
+.btn:focus-visible,.days button:focus-visible{outline:3px solid var(--rose);outline-offset:3px}
+.arch{aspect-ratio:4/5;border-radius:999px 999px 20px 20px;background:var(--lilac);position:relative;overflow:hidden}
+.arch svg{position:absolute;inset:auto 0 0 0;width:100%}
+section{padding:64px 0}
+h2{font:400 clamp(28px,3.4vw,42px)/1.15 "Prata";color:var(--plum);margin-bottom:24px}
+.days{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:18px}
+.days button{border:1px solid #cfc3e3;background:#fff;border-radius:999px;padding:9px 18px;font:500 15px "Manrope";cursor:pointer;color:var(--ink)}
+.days button[aria-pressed=true]{background:var(--plum);color:#fff;border-color:var(--plum)}
+.slots{display:grid;gap:10px}
+.slot{display:grid;grid-template-columns:90px 1fr auto;gap:16px;align-items:center;background:#fff;border-radius:16px;padding:16px 20px}
+.slot time{font:22px "Prata"}
+.slot small{color:#7a6f8c}
+.slot a{color:var(--plum);font-weight:700}
+.first{background:var(--rose);border-radius:28px;padding:36px;display:grid;grid-template-columns:1fr auto;gap:20px;align-items:center}
+.first b{font:400 44px "Prata";color:var(--plum)}
+footer{padding:30px 0 48px;font-size:14px;color:#7a6f8c}
+@media(max-width:860px){.hero{grid-template-columns:1fr}.arch{max-width:360px}nav{display:none}.first{grid-template-columns:1fr}}
+@media(max-width:520px){.slot{grid-template-columns:70px 1fr}.slot a{grid-column:1/-1}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header><div class="logo">Ось</div><nav><a href="#rasp">Расписание</a><a href="#first">Первое занятие</a></nav></header>
+<main>
+<div class="hero">
+  <div>
+    <h1>Спина перестанет ныть к десятому занятию</h1>
+    <p class="lead">Пилатес на реформерах в группах до 4 человек. Тренер видит каждого и поправляет технику, поэтому результат приходит быстрее.</p>
+    <a class="btn" href="#first">Прийти на пробное за 500 ₽</a>
+  </div>
+  <div class="arch" aria-hidden="true">
+    <svg viewBox="0 0 400 500" style="inset:0;height:100%"><circle cx="200" cy="170" r="92" fill="#F3C9C0"/><g fill="#4B3A6B" id="sp"></g></svg>
+    <script>(function(){const g=document.getElementById('sp');for(let i=0;i<17;i++){const t=i/16,y=90+t*340,x=200+Math.sin(t*Math.PI*2)*26,w=34-Math.abs(t-.55)*18;const r=document.createElementNS('http://www.w3.org/2000/svg','rect');r.setAttribute('x',x-w/2);r.setAttribute('y',y);r.setAttribute('width',w);r.setAttribute('height',14);r.setAttribute('rx',7);g.appendChild(r)}})()</script>
+  </div>
+</div>
+<section id="rasp">
+  <h2>Расписание на неделю</h2>
+  <div class="days" role="group" aria-label="День недели">
+    <button type="button" aria-pressed="true">Пн</button><button type="button" aria-pressed="false">Вт</button><button type="button" aria-pressed="false">Ср</button><button type="button" aria-pressed="false">Чт</button><button type="button" aria-pressed="false">Пт</button><button type="button" aria-pressed="false">Сб</button>
+  </div>
+  <div class="slots">
+    <div class="slot"><time>8:00</time><div>Реформер, базовый уровень<br><small>Свободно 2 места из 4</small></div><a href="#first">Записаться</a></div>
+    <div class="slot"><time>12:30</time><div>Здоровая спина<br><small>Свободно 1 место из 4</small></div><a href="#first">Записаться</a></div>
+    <div class="slot"><time>19:00</time><div>Реформер, средний уровень<br><small>Свободно 3 места из 4</small></div><a href="#first">Записаться</a></div>
+  </div>
+</section>
+<section id="first">
+  <div class="first"><div><h2 style="margin-bottom:8px">Пробное занятие</h2><p>Тренер проверит осанку и подберет уровень группы</p></div><b>500 ₽</b></div>
+</section>
+</main>
+<footer>Концепт лендинга · демо-макет · собрала JuliaDirect, реквизиты ставятся при запуске</footer>
+</div>
+<script>
+document.querySelectorAll('.days button').forEach(b=>b.onclick=()=>{document.querySelectorAll('.days button').forEach(x=>x.setAttribute('aria-pressed','false'));b.setAttribute('aria-pressed','true')});
+</script>
+</body>
+</html>

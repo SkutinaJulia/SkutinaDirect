@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Клининг квартир - концепт</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@600;800&family=Nunito:wght@400;600;800&display=swap" rel="stylesheet">
+<style>
+:root{--sky:#2F6BFF;--sky-d:#1B47C2;--lemon:#FFE45C;--foam:#EAF1FF;--ink:#14213D;--white:#fff}
+*{box-sizing:border-box;margin:0}
+body{background:var(--white);color:var(--ink);font:400 17px/1.55 "Nunito",sans-serif}
+.wrap{max-width:1180px;margin:0 auto;padding:0 24px}
+header{display:flex;justify-content:space-between;align-items:center;padding:20px 0}
+.logo{font:800 22px "Montserrat Alternates";color:var(--sky)}
+.call{font-weight:800;color:var(--ink);text-decoration:none}
+.hero{position:relative;background:var(--sky);color:#fff;border-radius:34px;padding:56px 48px 60px;overflow:hidden;display:grid;grid-template-columns:1.2fr .8fr;gap:30px;align-items:center}
+.hero::before,.hero::after{content:"";position:absolute;border-radius:50%;background:rgba(255,255,255,.12)}
+.hero::before{width:260px;height:260px;right:-60px;top:-80px}
+.hero::after{width:120px;height:120px;right:220px;bottom:-40px}
+h1{font:800 clamp(36px,4.8vw,60px)/1.02 "Montserrat Alternates";position:relative}
+.lead{margin:20px 0 28px;max-width:28em;color:#DCE6FF;position:relative}
+.pick{position:relative;background:#fff;color:var(--ink);border-radius:24px;padding:26px}
+.pick h2{font:800 18px "Nunito";margin-bottom:14px}
+.rooms{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-bottom:16px}
+.rooms button{border:2px solid var(--foam);background:var(--foam);border-radius:14px;padding:12px 0;font:800 18px "Nunito";color:var(--ink);cursor:pointer}
+.rooms button[aria-pressed=true]{border-color:var(--sky);background:#fff;color:var(--sky)}
+button:focus-visible,.btn:focus-visible{outline:3px solid var(--lemon);outline-offset:2px}
+.price{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:16px}
+.price{gap:12px}.price b{font:800 36px "Montserrat Alternates";color:var(--sky);white-space:nowrap}
+.btn{display:block;text-align:center;background:var(--lemon);color:var(--ink);text-decoration:none;font:800 17px "Nunito";padding:17px;border-radius:16px;border:0;cursor:pointer;width:100%}
+.btn:hover{background:#ffd91a}
+.chips{display:flex;flex-wrap:wrap;gap:10px;position:relative}
+.chips span{background:rgba(255,255,255,.16);padding:8px 14px;border-radius:30px;font-weight:600;font-size:15px}
+section{padding:64px 0}
+h2.t{font:800 clamp(28px,3vw,40px)/1.1 "Montserrat Alternates";margin-bottom:26px}
+.list{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.list div{background:var(--foam);border-radius:24px;padding:24px}
+.list h3{font:800 19px "Nunito";margin-bottom:8px}
+.list ul{padding-left:18px;color:#3b4a6b}
+.guar{display:grid;grid-template-columns:auto 1fr;gap:22px;align-items:center;border:3px dashed var(--sky);border-radius:28px;padding:28px}
+.guar b{font:800 64px/1 "Montserrat Alternates";color:var(--sky)}
+footer{padding:30px 0 48px;font-size:14px;color:#6a7593}
+@media(max-width:900px){.hero{grid-template-columns:1fr;padding:40px 24px}.list{grid-template-columns:1fr}}
+@media(max-width:520px){.call{display:none}.guar{grid-template-columns:1fr}.wrap{padding:0 14px}.hero{grid-template-columns:minmax(0,1fr);padding:32px 18px;border-radius:26px}h1{font-size:31px}.pick{padding:20px}.price{flex-direction:column;align-items:flex-start;gap:0}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header><div class="logo">чисто.точка</div><a class="call" href="#pick">+7 (000) 000-00-00</a></header>
+<main>
+<div class="hero">
+  <div>
+    <h1>Уберем квартиру, пока вы на работе</h1>
+    <p class="lead">Приезжаем со своей химией и пылесосом. Вы оставляете ключи консьержу, вечером получаете фотоотчет.</p>
+    <div class="chips"><span>Химия без запаха</span><span>Проверенные клинеры</span><span>Оплата после уборки</span></div>
+  </div>
+  <div class="pick" id="pick">
+    <h2>Сколько комнат убрать?</h2>
+    <div class="rooms" role="group" aria-label="Количество комнат">
+      <button type="button" aria-pressed="true" data-p="3900">1</button>
+      <button type="button" aria-pressed="false" data-p="4900">2</button>
+      <button type="button" aria-pressed="false" data-p="5900">3</button>
+      <button type="button" aria-pressed="false" data-p="6900">4+</button>
+    </div>
+    <div class="price"><span>Поддерживающая уборка</span><b id="p">3 900 ₽</b></div>
+    <a class="btn" href="#pick">Выбрать время уборки</a>
+  </div>
+</div>
+<section>
+  <h2 class="t">Что сделаем за 3 часа</h2>
+  <div class="list">
+    <div><h3>Комнаты</h3><ul><li>Пыль со всех поверхностей</li><li>Зеркала и стекла</li><li>Пылесос и мытье полов</li></ul></div>
+    <div><h3>Кухня</h3><ul><li>Фасады и столешница</li><li>Плита и микроволновка</li><li>Раковина и мусор</li></ul></div>
+    <div><h3>Санузел</h3><ul><li>Ванна, душ, унитаз</li><li>Плитка и смесители</li><li>Дезинфекция</li></ul></div>
+  </div>
+</section>
+<section>
+  <div class="guar"><b>24 ч</b><p>Если что-то не понравилось, напишите в течение суток. Приедем и переделаем бесплатно.</p></div>
+</section>
+</main>
+<footer>Концепт лендинга · демо-макет · собрала JuliaDirect, реквизиты ставятся при запуске</footer>
+</div>
+<script>
+document.querySelectorAll('.rooms button').forEach(b=>b.onclick=()=>{document.querySelectorAll('.rooms button').forEach(x=>x.setAttribute('aria-pressed','false'));b.setAttribute('aria-pressed','true');document.getElementById('p').textContent=(+b.dataset.p).toLocaleString('ru-RU')+' ₽'});
+</script>
+</body>
+</html>
