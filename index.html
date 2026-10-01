@@ -3,258 +3,378 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Юлия Скутина: реклама и сайты</title>
-<meta name="description" content="Юлия Скутина. Настройка и ведение Яндекс Директа, лендинги под рекламу, баннеры. Работы и концепты сайтов.">
+<title>Юлия Скутина: сайты и реклама в Яндекс Директе</title>
+<meta name="description" content="Сайт за 3 дня по примерам, которые вам нравятся, и реклама в Яндекс Директе с 2020 года. Кейсы онлайн-школ, производств и застройщиков.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Юлия Скутина: сайты и реклама в Яндекс Директе">
+<meta property="og:description" content="Сайт за 3 дня и реклама, которая совпадает с сайтом. Кейсы с цифрами.">
+<meta property="og:image" content="https://skutinadirect.vercel.app/photo.webp">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='30' fill='%23A36C6C'/%3E%3Ccircle cx='24' cy='22' r='7' fill='%23FFFDFB'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;700&family=Onest:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Yeseva+One&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
+/* палитра с фото: фон, кофта, бусы, волосы, губы */
 :root{
-  --paper:#F4F5F7; --card:#FFFFFF; --ink:#1C2340; --soft:#5B6178;
-  --marker:#FFDA3D; --link:#2A55E5; --url:#1D8A4E; --rule:#DADDE5;
+  --rose:#A36C6C;     /* фон фото */
+  --rose-d:#8E5A5B;
+  --mist:#EADDD9;     /* приглушенная роза для больших фонов */
+  --noir:#100C17;     /* черная кофта и шляпа */
+  --pearl:#F3ECE9;    /* жемчужные бусы, светлые секции */
+  --hair:#E8909B;     /* розовые волосы */
+  --berry:#A64756;    /* помада */
+  --blush:#D9BDB3;    /* кожа, тонкие линии */
+  --muted:#6E5F66;
 }
 *{box-sizing:border-box;margin:0}
 html{scroll-behavior:smooth}
-body{background:var(--paper);color:var(--ink);font:400 17px/1.6 "Onest",system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+body{background:var(--pearl);color:var(--noir);font:400 17px/1.65 "Manrope",system-ui,sans-serif;-webkit-font-smoothing:antialiased}
 a{color:inherit}
 img{display:block;max-width:100%}
-.wrap{max-width:1200px;margin:0 auto;padding:0 24px}
-:focus-visible{outline:3px solid var(--link);outline-offset:3px;border-radius:4px}
+.wrap{max-width:1240px;margin:0 auto;padding:0 24px}
+:focus-visible{outline:3px solid var(--noir);outline-offset:3px;border-radius:4px}
+.band-noir :focus-visible{outline-color:var(--hair)}
+
+/* полосы */
+.band-mist{background:var(--mist);color:var(--noir)}
+.band-noir{background:var(--noir);color:var(--pearl)}
+
+/* жемчужина */
+.bead{display:inline-block;width:.42em;height:.42em;border-radius:50%;flex:none;background:radial-gradient(circle at 35% 30%,#fff 0 30%,#EFE6E0 60%,#CDBFB8 100%);box-shadow:0 1.5px 2px rgba(16,12,23,.3)}
 
 /* шапка */
 .top{display:flex;justify-content:space-between;align-items:center;padding:22px 0}
-.name{font:700 17px "Unbounded",sans-serif;text-decoration:none;letter-spacing:-.01em}
+.name{font:400 22px "Yeseva One",serif;text-decoration:none}
 .top nav{display:flex;gap:26px;align-items:center}
-.top nav a{text-decoration:none;font-weight:500}
-.top nav a:hover{color:var(--link)}
-.pill{background:var(--ink);color:#fff!important;padding:11px 20px;border-radius:30px}
-.pill:hover{background:#2c3560}
+.top nav a{text-decoration:none;font-weight:600}
+.top nav a:hover{color:var(--berry)}
+.top .tel{font-weight:700}
+.pill{background:var(--noir);color:var(--pearl)!important;padding:12px 22px;border-radius:40px}
+.pill:hover{background:var(--berry)}
 
-/* первый экран: выдача */
-.hero{display:grid;grid-template-columns:.95fr 1.05fr;gap:56px;align-items:center;padding:48px 0 90px}
-h1{font:700 clamp(34px,4.3vw,56px)/1.08 "Unbounded",sans-serif;letter-spacing:-.025em}
-.hero p{margin:22px 0 32px;max-width:30em;color:var(--soft);font-size:19px}
-.cta{display:inline-block;background:var(--marker);color:var(--ink);font:600 17px "Onest";padding:17px 30px;border-radius:14px;text-decoration:none}
-.cta:hover{background:#ffd01a}
-.cta2{margin-left:18px;font-weight:600;color:var(--link)}
+/* первый экран */
+.intro{padding:18px 0 60px}
+.intro-title{text-align:center;font:400 clamp(34px,4.6vw,66px)/1.05 "Yeseva One",serif;letter-spacing:-.01em}
+.intro-title .duo{display:flex;justify-content:center;align-items:center;flex-wrap:wrap;gap:.2em .55em;font-size:.5em;margin-top:.4em;color:var(--rose-d)}
+.intro-grid{display:grid;grid-template-columns:1.1fr minmax(260px,360px) 1fr;gap:44px;align-items:center;margin-top:36px}
 
-.serp{background:var(--card);border-radius:22px;padding:22px 24px 26px;box-shadow:0 30px 60px -40px rgba(28,35,64,.45)}
-.q{display:flex;align-items:center;gap:12px;border:2px solid var(--ink);border-radius:14px;padding:13px 16px;font-size:17px;min-height:54px}
-.q svg{flex:none}
-.caret{display:inline-block;width:2px;height:1.1em;background:var(--ink);vertical-align:-3px;margin-left:1px;animation:blink 1s steps(1) infinite}
-@keyframes blink{50%{opacity:0}}
-.res{margin-top:22px;opacity:0;transform:translateY(8px);transition:opacity .5s,transform .5s}
-.serp.done .res{opacity:1;transform:none}
-.ad{border-radius:14px;padding:16px 18px;background:#FFFBE6;border:1px solid #F4E2A0}
-.ad small{font-size:13px;color:var(--soft)}
-.ad small b{font-weight:600;color:var(--ink);margin-right:8px}
-.ad a{display:block;font:600 21px/1.3 "Onest";color:var(--link);margin:4px 0 4px;text-decoration:none}
-.ad a:hover{text-decoration:underline}
-.ad .u{color:var(--url);font-size:14px}
-.ad p{font-size:15px;color:var(--ink);margin:6px 0 0}
-.ad .links{display:flex;gap:16px;flex-wrap:wrap;margin-top:8px;font-size:14px;color:var(--link)}
-.org{padding:16px 18px 0}
-.org i{display:block;height:11px;border-radius:6px;background:#E8EAF0;margin-bottom:9px}
-.note{font-size:14px;color:var(--soft);margin-top:14px;padding:0 4px}
+.offer{padding:0 0 22px;margin-bottom:22px;border-bottom:1px solid var(--blush)}
+.offer:last-of-type{border-bottom:0;margin-bottom:26px}
+.offer-kind{display:flex;align-items:center;gap:10px;font-size:14px;font-weight:700;color:var(--rose-d);margin-bottom:6px}
+.offer-kind .bead{font-size:26px}
+.offer h2{font:400 clamp(28px,2.6vw,38px)/1.08 "Yeseva One",serif;margin-bottom:8px;max-width:none}
+.offer p{font-size:15.5px;line-height:1.55;font-weight:500;max-width:25em}
+.intro-cta{display:flex;flex-wrap:wrap;align-items:center;gap:14px 22px}
+.intro-cta .alt{font-weight:700;text-decoration:none;border-bottom:2px solid var(--noir)}
+.intro-cta .alt:hover{color:var(--berry);border-color:var(--berry)}
+
+.portrait{position:relative;aspect-ratio:3/4.3}
+.oval{position:absolute;inset:6%;border-radius:999px;overflow:hidden;background:var(--rose)}
+.oval img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:43% 30%}
+.beads{position:absolute;inset:0;width:100%;height:100%;overflow:visible;filter:drop-shadow(0 1.5px 1.2px rgba(16,12,23,.28))}
+.beads rect{fill:none;stroke:#FFFDFB;stroke-width:9;stroke-linecap:round;stroke-dasharray:0 17}
+
+.intro-right{text-align:right}
+.ir{margin-bottom:22px}
+.ir span{display:block;font-size:13px;font-weight:600;color:rgba(16,12,23,.62);margin:6px 0 0 auto;max-width:16em}
+.ir b{display:block;font:400 clamp(34px,3.4vw,50px)/1 "Yeseva One",serif}
+.ir a{font-size:14px;font-weight:700;color:var(--berry)}
+.clients{list-style:none;padding:24px 0 0;margin-top:44px;border-top:1px solid var(--blush);display:flex;flex-wrap:wrap;justify-content:center;gap:10px 40px;color:var(--rose-d);font:400 18px "Yeseva One",serif}
 
 /* секции */
-section{padding:84px 0;border-top:1px solid var(--rule)}
-h2{font:700 clamp(28px,3.2vw,42px)/1.12 "Unbounded",sans-serif;letter-spacing:-.02em;max-width:18em}
-.sub{color:var(--soft);margin:14px 0 40px;max-width:36em}
+section{padding:92px 0}
+h2{font:400 clamp(32px,3.8vw,52px)/1.08 "Yeseva One",serif;max-width:17em}
+.sub{color:var(--muted);margin:16px 0 44px;max-width:36em}
+.band-noir .sub{color:#BDAFB5}
+.btn{display:inline-block;background:var(--noir);color:var(--pearl);text-decoration:none;font-weight:700;padding:16px 28px;border-radius:40px}
+.btn:hover{background:var(--berry)}
+
+/* подробнее о двух направлениях */
+.plus-grid{display:grid;grid-template-columns:1fr 1fr;border-top:1px solid var(--blush)}
+.plus-col{padding:40px 48px 8px 0}
+.plus-col + .plus-col{padding:40px 0 8px 48px;border-left:1px solid var(--blush)}
+.plus-kind{display:inline-flex;align-items:center;gap:10px;font-weight:700;color:var(--rose-d);margin-bottom:10px}
+.plus-kind .bead{font-size:28px}
+.plus-big{font:400 clamp(30px,3.4vw,46px)/1.05 "Yeseva One",serif;margin-bottom:16px}
+.plus-lead{font-size:18px;max-width:28em;margin-bottom:24px}
+.plus-steps{list-style:none;padding:0;margin:0 0 22px;counter-reset:p;display:grid;gap:12px}
+.plus-steps li{counter-increment:p;display:grid;grid-template-columns:44px 1fr;align-items:baseline;gap:10px}
+.plus-steps li::before{content:counter(p);font:400 30px/1 "Yeseva One",serif;color:var(--rose)}
+.plus-list{list-style:none;padding:0;margin:0 0 30px;display:grid;gap:10px;color:var(--muted)}
+.plus-list li{position:relative;padding-left:24px}
+.plus-list li::before{content:"";position:absolute;left:2px;top:.62em;width:9px;height:9px;border-radius:50%;background:var(--berry)}
+.quote-mini{border-left:3px solid var(--hair);padding:4px 0 4px 16px;margin:0 0 28px;font-style:italic;max-width:30em}
+.quote-mini small{display:block;font-style:normal;color:var(--muted);font-size:14px;margin-top:4px}
+
+/* кейсы */
+.cases{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--blush)}
+.case{padding:34px 28px 36px 0;border-bottom:1px solid var(--blush)}
+.case:not(:nth-child(3n+1)){padding-left:28px;border-left:1px solid var(--blush)}
+.case b{display:block;font:400 clamp(40px,4.4vw,60px)/1 "Yeseva One",serif;color:var(--berry)}
+.case .what{font-weight:700;margin:12px 0 6px;color:var(--noir)}
+.case p{color:var(--muted);font-size:15px}
+.case .niche{display:block;font-size:13px;font-weight:700;color:var(--rose-d);margin-bottom:12px}
+.cases-more{margin-top:30px}
+.cases-more a{font-weight:700;color:var(--berry)}
 
 /* услуги */
-.svc{display:grid;grid-template-columns:1.1fr 1.5fr .8fr;gap:28px;padding:30px 0;border-bottom:1px solid var(--rule);align-items:start}
-.svc:first-of-type{border-top:1px solid var(--rule)}
-.svc h3{font:700 21px/1.25 "Unbounded"}
-.svc ul{padding-left:18px;color:var(--soft)}
+.svc{display:grid;grid-template-columns:1.1fr 1.5fr .8fr;gap:28px;padding:32px 0;border-bottom:1px solid var(--blush);align-items:start}
+.svc:first-of-type{border-top:1px solid var(--blush)}
+.svc h3{font:400 26px/1.2 "Yeseva One",serif}
+.svc ul{padding-left:18px;color:var(--muted)}
 .svc li{margin-bottom:4px}
-.svc .price{font:600 19px "Onest";text-align:right}
-.svc .price small{display:block;font-weight:400;font-size:14px;color:var(--soft)}
+.svc li::marker{color:var(--berry)}
+.svc .price{font:400 26px "Yeseva One",serif;text-align:right;color:var(--berry)}
+.svc .price small{display:block;font:500 14px "Manrope";color:var(--muted);margin-top:4px}
 
 /* мокапы */
-.works{display:grid;grid-template-columns:1fr 1fr;gap:56px 40px}
-.work.wide{grid-column:1/-1;display:grid;grid-template-columns:1.5fr 1fr;gap:40px;align-items:center}
+.works{display:grid;grid-template-columns:1fr 1fr;gap:60px 40px}
+.work.wide{grid-column:1/-1;display:grid;grid-template-columns:1.5fr 1fr;gap:44px;align-items:center}
 .dev{position:relative;padding:0 0 26px}
-.laptop{background:#23283B;border-radius:14px 14px 4px 4px;padding:10px 10px 12px;position:relative}
-.laptop::after{content:"";position:absolute;left:-5%;right:-5%;bottom:-14px;height:14px;background:linear-gradient(#cfd3dd,#aeb3c1);border-radius:0 0 14px 14px}
+.laptop{background:#2A2230;border-radius:14px 14px 4px 4px;padding:10px 10px 12px;position:relative}
+.laptop::after{content:"";position:absolute;left:-5%;right:-5%;bottom:-14px;height:14px;background:linear-gradient(#D9BDB3,#B79B92);border-radius:0 0 14px 14px}
 .screen{aspect-ratio:16/10;overflow:hidden;border-radius:4px;background:#fff}
 .screen img{width:100%;height:100%;object-fit:cover;object-position:top}
-.phone{position:absolute;right:-8px;bottom:0;width:23%;min-width:92px;background:#23283B;border-radius:18px;padding:6px;box-shadow:0 18px 30px -18px rgba(0,0,0,.6)}
+.phone{position:absolute;right:-8px;bottom:0;width:23%;min-width:92px;background:#2A2230;border-radius:18px;padding:6px;box-shadow:0 18px 30px -18px rgba(0,0,0,.7)}
 .phone .screen{aspect-ratio:390/780;border-radius:13px}
-.meta{margin-top:26px}
-.meta h3{font:700 20px/1.3 "Unbounded"}
-.meta p{color:var(--soft);margin:6px 0 10px;font-size:16px}
-.meta a{font-weight:600;color:var(--link);text-decoration:none}
-.meta a:hover{text-decoration:underline}
-.tag{display:inline-block;font-size:13px;font-weight:600;background:var(--marker);padding:3px 10px;border-radius:20px;margin-bottom:10px}
+.meta{margin-top:28px}
+.meta h3{font:400 26px/1.2 "Yeseva One",serif}
+.meta p{color:var(--muted);margin:6px 0 12px;font-size:16px}
+.band-noir .meta p{color:#BDAFB5}
+.meta a{font-weight:700;text-decoration:none;color:var(--berry);border-bottom:1px solid currentColor}
+.band-noir .meta a{color:var(--hair)}
+.meta a:hover{border-bottom-width:2px}
+.meta .res{display:block;color:var(--hair);font-weight:700;margin:-4px 0 12px}
+.tag{display:inline-block;font-size:13px;font-weight:700;background:var(--hair);color:var(--noir);padding:4px 12px;border-radius:20px;margin-bottom:12px}
 .work.wide .meta{margin-top:0}
-.work.wide .meta h3{font-size:26px}
-
-.concepts{display:grid;grid-template-columns:repeat(3,1fr);gap:48px 32px}
+.work.wide .meta h3{font-size:40px}
+.concepts{display:grid;grid-template-columns:repeat(3,1fr);gap:52px 32px}
 .concepts .phone{width:26%}
 
+/* отзывы */
+.reviews{display:grid;grid-template-columns:repeat(2,1fr);gap:28px}
+.rev{background:#fff;border-radius:22px;padding:30px 32px}
+.rev q{display:block;font:400 22px/1.35 "Yeseva One",serif;quotes:"«" "»"}
+.rev .who{margin-top:16px;font-size:14px;color:var(--muted)}
+.rev .who b{display:block;color:var(--noir);font-size:15px}
+.rev.video{background:var(--noir);color:var(--pearl);display:flex;flex-direction:column;justify-content:space-between}
+.rev.video p{margin-top:10px;color:#BDAFB5}
+.rev.video a{color:var(--hair);font-weight:700}
+
 /* этапы */
-.steps{list-style:none;padding:0;display:grid;grid-template-columns:repeat(4,1fr);gap:28px;counter-reset:s}
-.steps li{counter-increment:s}
-.steps li::before{content:counter(s);display:flex;align-items:center;justify-content:center;width:44px;height:44px;border-radius:50%;background:var(--ink);color:#fff;font:700 17px "Unbounded";margin-bottom:16px}
+.steps{list-style:none;padding:0;display:grid;grid-template-columns:repeat(4,1fr);gap:30px;counter-reset:s}
+.steps li{counter-increment:s;border-top:1px solid var(--blush);padding-top:18px}
+.steps li::before{content:counter(s);display:block;font:400 54px/1 "Yeseva One",serif;color:var(--rose);margin-bottom:12px}
 .steps b{display:block;font-size:18px;margin-bottom:4px}
-.steps span{color:var(--soft);font-size:16px}
+.steps span{color:var(--muted);font-size:16px}
 
-/* контакт */
-.contact{background:var(--ink);color:#fff;border-radius:28px;padding:56px;display:grid;grid-template-columns:1.3fr 1fr;gap:40px;align-items:center}
-.contact h2{color:#fff}
-.contact p{color:#C3C8DA;margin-top:14px}
-.contact .cta{justify-self:start}
-footer{padding:36px 0 48px;font-size:14px;color:var(--soft)}
+/* финальный круг */
+.final{text-align:center;padding:100px 0 110px}
+.ring{position:relative;display:inline-flex;flex-direction:column;align-items:flex-start;justify-content:center;width:min(420px,86vw);aspect-ratio:1;text-decoration:none;color:var(--noir)}
+.ring-line{position:absolute;inset:0;width:100%;height:100%;overflow:visible;animation:spin 60s linear infinite;filter:drop-shadow(0 1.5px 1.2px rgba(16,12,23,.28))}
+.ring-line circle{fill:none;stroke:#FFFDFB;stroke-width:9;stroke-linecap:round;stroke-dasharray:0 19}
+.ring-small{position:relative;font-size:15px;font-weight:600;color:rgba(16,12,23,.7);margin-left:18%}
+.ring-big{position:relative;text-align:left;font:400 clamp(46px,7vw,84px)/1 "Yeseva One",serif;margin:10px 0 0 -14%;transition:color .3s}
+.ring-arrow{position:relative;width:42px;height:42px;margin:22px 0 0 4%;transition:transform .3s}
+.ring:hover .ring-big{color:var(--berry)}
+.ring:hover .ring-arrow{transform:translate(5px,-5px)}
+.final-note{max-width:30em;margin:30px auto 0;font-weight:500}
+.final-contacts{display:flex;justify-content:center;flex-wrap:wrap;gap:12px 30px;margin-top:22px;font-weight:700}
+.final-contacts a{text-decoration:none;border-bottom:2px solid var(--noir)}
+.final-contacts a:hover{color:var(--berry);border-color:var(--berry)}
+@keyframes spin{to{transform:rotate(360deg)}}
+footer{padding:30px 0 40px;font-size:14px;color:#BDAFB5}
 
+@media (max-width:1080px){
+  .top nav a.hide-md{display:none}
+}
 @media (max-width:980px){
-  .hero{grid-template-columns:1fr;gap:40px;padding-top:24px}
+  .intro-grid{grid-template-columns:1fr 1fr;gap:32px}
+  .portrait{grid-column:1/-1;grid-row:1;width:min(300px,70%);justify-self:center}
   .work.wide{grid-template-columns:1fr}
-  .concepts{grid-template-columns:1fr 1fr}
+  .concepts,.cases{grid-template-columns:1fr 1fr}
+  .case:not(:nth-child(3n+1)){padding-left:0;border-left:0}
+  .case:nth-child(even){padding-left:28px;border-left:1px solid var(--blush)}
   .steps{grid-template-columns:1fr 1fr}
   .svc{grid-template-columns:1fr 1.4fr}
   .svc .price{grid-column:1/-1;text-align:left}
 }
+@media (max-width:860px){
+  .plus-grid{grid-template-columns:1fr}
+  .plus-col,.plus-col + .plus-col{padding:36px 0 12px;border-left:0}
+  .plus-col + .plus-col{border-top:1px solid var(--blush);margin-top:28px}
+  .reviews{grid-template-columns:1fr}
+}
 @media (max-width:640px){
   .wrap{padding:0 16px}
   .top nav a:not(.pill){display:none}
-  .works,.concepts{grid-template-columns:1fr}
+  .intro{padding-top:8px}
+  .intro-title .duo{flex-direction:column;gap:.25em}
+  .intro-grid{grid-template-columns:1fr;gap:26px}
+  .portrait{width:min(190px,54%)}
+  .intro-right{text-align:left;display:grid;grid-template-columns:1fr 1fr;gap:0 18px}
+  .ir span{margin-left:0}
+  .clients{gap:8px 22px;font-size:16px}
+  .works,.concepts,.cases{grid-template-columns:1fr}
+  .case:nth-child(n){padding:28px 0;border-left:0}
   .svc{grid-template-columns:1fr;gap:10px}
   .steps{grid-template-columns:1fr}
-  .contact{grid-template-columns:1fr;padding:34px 24px}
-  .cta2{display:block;margin:16px 0 0}
-  .serp{padding:16px}
   .laptop::after{left:-2%;right:-2%}
   .phone{right:0}
-  .ad a{font-size:18px}
-  section{padding:64px 0}
-}
-@media (prefers-reduced-motion:reduce){.caret{animation:none}.res{transition:none}html{scroll-behavior:auto}}
-
-/* v2: первый экран с фото */
-.intro{padding:40px 0 70px}
-.intro-title{text-align:center;font:500 clamp(28px,3.6vw,48px)/1.2 "Unbounded",sans-serif;letter-spacing:-.02em;max-width:none}
-.intro-grid{display:grid;grid-template-columns:1fr minmax(260px,380px) 1fr;gap:48px;align-items:center;margin-top:56px}
-.il{margin-bottom:34px}
-.il span,.ir span{display:block;font-size:13px;color:var(--soft);margin-bottom:6px}
-.il p{font-size:16px;line-height:1.55;max-width:18em}
-.il a{color:var(--link);font-weight:600;text-decoration:none}
-.il a:hover{text-decoration:underline}
-.oval{position:relative;aspect-ratio:3/4.3;border-radius:999px;overflow:hidden;background:#A86E72;box-shadow:0 0 0 14px #fff,0 0 0 15px var(--rule)}
-.oval img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 30%}
-.oval-ph{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;color:var(--soft);font-size:15px;padding:30px}
-.oval-ph small{font-size:12px;margin-top:6px}
-.intro-right{text-align:right}
-.ir{margin-bottom:26px}
-.ir span{max-width:15em;margin-left:auto}
-.ir b{display:block;font:500 clamp(30px,3vw,44px)/1 "Unbounded",sans-serif;letter-spacing:-.02em}
-.clients{list-style:none;padding:0;display:flex;flex-wrap:wrap;justify-content:center;gap:14px 44px;margin-top:64px;color:#8A90A5;font:500 16px "Unbounded",sans-serif}
-
-/* v2: финальный круг */
-.final{text-align:center;padding:100px 0 110px}
-.ring{position:relative;display:inline-flex;flex-direction:column;align-items:flex-start;justify-content:center;width:min(400px,86vw);aspect-ratio:1;text-decoration:none;color:var(--ink)}
-.ring-line{position:absolute;inset:0;width:100%;height:100%;color:var(--soft);animation:spin 40s linear infinite}
-.ring-small{position:relative;font-size:14px;color:var(--soft);margin-left:18%}
-.ring-big{position:relative;text-align:left;font:500 clamp(40px,6vw,68px)/1.02 "Unbounded",sans-serif;letter-spacing:-.03em;margin:8px 0 0 -12%;transition:color .3s}
-.ring-arrow{position:relative;width:40px;height:40px;margin:22px 0 0 2%;transition:transform .3s}
-.ring:hover .ring-big{color:var(--link)}
-.ring:hover .ring-arrow{transform:translate(5px,-5px)}
-.final-note{color:var(--soft);max-width:30em;margin:30px auto 0}
-@keyframes spin{to{transform:rotate(360deg)}}
-
-@media (max-width:980px){
-  .intro-grid{grid-template-columns:1fr 1fr;gap:32px}
-  .oval{grid-column:1/-1;grid-row:1;width:min(320px,80%);justify-self:center}
-}
-@media (max-width:640px){
-  .intro-grid{grid-template-columns:1fr}
-  .oval{width:min(240px,70%)}
-  .intro-title{font-size:24px}
-  .intro{padding-top:20px}
-  .intro-right{text-align:left;display:grid;grid-template-columns:1fr 1fr;gap:0 20px}
-  .ir span{margin-left:0}
   .ring-big{margin-left:-4%}
-  .clients{gap:10px 24px;font-size:14px}
+  .rev{padding:24px}
+  section{padding:68px 0}
 }
-@media (prefers-reduced-motion:reduce){.ring-line{animation:none}}
+@media (prefers-reduced-motion:reduce){.ring-line{animation:none}html{scroll-behavior:auto}}
 </style>
 </head>
 <body>
-<div class="wrap">
-  <header class="top">
-    <a class="name" href="#">Юлия Скутина</a>
-    <nav aria-label="Разделы">
-      <a href="#uslugi">Услуги</a>
-      <a href="#raboty">Работы</a>
-      <a href="#koncepty">Концепты</a>
-      <a class="pill" href="https://vk.link/juliadirect" target="_blank" rel="noopener">Написать</a>
-    </nav>
-  </header>
+<div class="band-mist">
+  <div class="wrap">
+    <header class="top">
+      <a class="name" href="#">Юлия Скутина</a>
+      <nav aria-label="Разделы">
+        <a class="hide-md" href="#kejsy">Кейсы</a>
+        <a class="hide-md" href="#raboty">Сайты</a>
+        <a class="hide-md" href="#otzyvy">Отзывы</a>
+        <a class="tel" href="tel:+79638635841">+7 (963) 863-58-41</a>
+        <a class="pill" href="https://vk.link/juliadirect" target="_blank" rel="noopener">Написать</a>
+      </nav>
+    </header>
 
-  <main>
     <div class="intro">
-      <h1 class="intro-title">Юлия Скутина<br>Реклама в Яндекс Директе и сайты</h1>
+      <h1 class="intro-title">Юлия Скутина<span class="duo"><span>Сайты</span><i class="bead" aria-hidden="true"></i><span>Реклама в Яндекс Директе</span></span></h1>
 
       <div class="intro-grid">
         <div class="intro-left">
-          <div class="il"><span>Обо мне</span><p>Настраиваю рекламу, которая приносит заявки, и делаю под нее сайты. Объявление и сайт говорят одно и то же, поэтому люди не уходят.</p></div>
-          <div class="il"><span>Контакты</span><p><a href="https://vk.link/juliadirect" target="_blank" rel="noopener">vk.link/juliadirect</a></p></div>
-          <div class="il"><span>Услуги</span><p>Яндекс Директ<br>Лендинги под рекламу<br>Баннеры для РСЯ</p></div>
+          <div class="offer">
+            <p class="offer-kind"><i class="bead" aria-hidden="true"></i>Сайты</p>
+            <h2>Сайт за 3 дня</h2>
+            <p>Пришлите 1-3 сайта, которые вам нравятся, соберу такой же под вашу нишу. Не нужно искать дизайнера, копирайтера и маркетолога.</p>
+          </div>
+          <div class="offer">
+            <p class="offer-kind"><i class="bead" aria-hidden="true"></i>Реклама в Яндекс Директе</p>
+            <h2>Реклама, которая совпадает с сайтом</h2>
+            <p>С 2020 года, сертифицированный специалист Яндекс Директа. Бюджет считаю по Вордстату до запуска, кабинет оформлен на вас.</p>
+          </div>
+          <div class="intro-cta">
+            <a class="btn" href="https://vk.link/juliadirect" target="_blank" rel="noopener">Обсудить проект</a>
+            <a class="alt" href="#kejsy">Смотреть кейсы</a>
+          </div>
         </div>
 
-        <div class="oval">
-          <span class="oval-ph">Здесь будет ваше фото<br><small>файл photo.jpg в папке сайта</small></span>
-          <img src="photo.webp" alt="Юлия Скутина" onerror="this.remove()">
+        <div class="portrait">
+          <svg class="beads" viewBox="0 0 300 430" preserveAspectRatio="none" aria-hidden="true"><rect x="5" y="5" width="290" height="420" rx="145" ry="145"/></svg>
+          <div class="oval"><img src="photo.webp" alt="Юлия Скутина"></div>
         </div>
 
         <div class="intro-right">
-          <div class="ir"><span>Сайтов заказчиков в портфолио</span><b>6</b></div>
-          <div class="ir"><span>Ниши заказчиков: мебель, потолки, кровля, распил ДСП, психология</span><b>5</b></div>
-          <div class="ir"><span>Настройка Директа</span><b>от 20 000 ₽</b></div>
-          <div class="ir"><span>Концептов лендингов для разных ниш</span><b>5</b></div>
+          <div class="ir"><b>×2,5</b><span>оборот от рекламного бюджета, автовебинар врача</span></div>
+          <div class="ir"><b>83 ₽</b><span>цена регистрации на вебинар онлайн-школы</span></div>
+          <div class="ir"><b>2 → 19</b><span>заявок в месяц у производства, при меньшем бюджете</span></div>
+          <div class="ir"><b>50</b><span>заявок за 12 дней на новом сайте с рекламой</span></div>
+          <a href="#kejsy">Все кейсы</a>
         </div>
       </div>
 
       <ul class="clients" aria-label="Заказчики">
-        <li>Мебельер45</li><li>Формат+</li><li>Крыши и фасады</li><li>Распил ДСП</li><li>СК Мебель</li><li>Лилия Чермянина</li>
+        <li>Академия интернет-маркетинга</li><li>БРАСТ</li><li>Спальни &amp; Кровати</li><li>Кристалл</li><li>Мебельер45</li><li>Формат+</li><li>Распил ДСП</li>
       </ul>
     </div>
+  </div>
+</div>
 
-    <section id="uslugi">
-      <h2>Чем помогу</h2>
+<main>
+  <section id="kejsy">
+    <div class="wrap">
+      <h2>Кейсы по рекламе в цифрах</h2>
+      <p class="sub">Реальные результаты из отчетов Директа. Средние чеки клиентов скрыты по договору о неразглашении.</p>
+      <div class="cases">
+        <article class="case"><span class="niche">Онлайн-школа, вебинар о сне</span><b>+63%</b><p class="what">Окупаемость рекламы</p><p>5 726 регистраций по 83,5 ₽ при бюджете 478 000 ₽. Аудиторию разделила на 3 группы с помощью нейросети, под каждую свои объявления.</p></article>
+        <article class="case"><span class="niche">Автовебинар врача-кардиолога</span><b>×2,5</b><p class="what">Оборот от рекламного бюджета</p><p>1 050 регистраций по 152 ₽ за месяц и 30 оплат без участия спикера. Бюджет 160 000 ₽.</p></article>
+        <article class="case"><span class="niche">Академия интернет-маркетинга</span><b>700 ₽</b><p class="what">Цена заявки вместо 2 000 ₽</p><p>Реклама марафона по Директу для школы Евгения Андрианова. Нашла стратегию, которая приносит заявки, и вывела ее на масштаб.</p></article>
+        <article class="case"><span class="niche">Производство салфеток с логотипом</span><b>2 → 19</b><p class="what">Заявок в месяц</p><p>Бюджет при этом снизился с 22 000 до 17 000 ₽. Старую рекламу 2018 года перенастроила с нуля.</p></article>
+        <article class="case"><span class="niche">Распил ЛДСП, Москва</span><b>50</b><p class="what">Заявок за первые 12 дней</p><p>Сделала сайт и рекламу, запустились день в день по плану. Бюджет 50 000 ₽.</p></article>
+        <article class="case"><span class="niche">Калифорнийские черви, вся Россия</span><b>14</b><p class="what">Сделок за 10 дней</p><p>Конкурс среди нескольких директологов с бюджетом 10 000 ₽. Принесла 31 заявку и выиграла конкурс.</p></article>
+      </div>
+      <p class="cases-more">Подробные разборы: <a href="https://vk.com/topic-199996545_48564868" target="_blank" rel="noopener">кейсы в группе ВКонтакте</a></p>
+    </div>
+  </section>
+
+  <section id="pochemu" class="band-mist">
+    <div class="wrap">
+      <h2>Как это работает</h2>
+      <p class="sub">Сайт и рекламу делает один человек под одни и те же запросы. Не нужно ждать каждого подрядчика по очереди и объяснять задачу трем людям.</p>
+
+      <div class="plus-grid">
+        <article class="plus-col">
+          <p class="plus-kind"><i class="bead" aria-hidden="true"></i>Сайты</p>
+          <h3 class="plus-big">Сайт за 3 дня</h3>
+          <ol class="plus-steps">
+            <li>Присылаете 1-3 сайта, которые нравятся, и рассказываете о своем деле</li>
+            <li>Собираю структуру, тексты и дизайн под вашу нишу</li>
+            <li>Через 3 дня сайт готов и сразу подходит для рекламы</li>
+          </ol>
+          <p class="quote-mini">«Без лишних вопросов за три дня сделала то, что я год сделать не мог!»<small>Заказчик из компании КОРБИС</small></p>
+          <a class="btn" href="https://vk.link/juliadirect" target="_blank" rel="noopener">Хочу сайт за 3 дня</a>
+        </article>
+
+        <article class="plus-col">
+          <p class="plus-kind"><i class="bead" aria-hidden="true"></i>Реклама в Яндекс Директе</p>
+          <h3 class="plus-big">Реклама, которая совпадает с сайтом</h3>
+          <ul class="plus-list">
+            <li>Объявление обещает то же, что человек видит на первом экране, поэтому он не закрывает вкладку</li>
+            <li>Бюджет считаю до запуска по реальному спросу в Вордстате, а не на глаз</li>
+            <li>Проверяю сайт и объявления глазами 5 типажей ваших покупателей</li>
+            <li>С помощью нейросетей быстро делаю офферы и картинки для объявлений</li>
+            <li>Рекламный кабинет и сайт оформлены на вас, доступы всегда у вас</li>
+            <li>Кабинет через eLama: закрывающие документы для бухгалтерии</li>
+          </ul>
+          <a class="btn" href="https://vk.link/juliadirect" target="_blank" rel="noopener">Обсудить рекламу</a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="uslugi">
+    <div class="wrap">
+      <h2>Услуги и цены</h2>
       <p class="sub">Можно взять что-то одно, но лучше всего работает связка: реклама и сайт делаются под одни и те же запросы.</p>
 
       <div class="svc">
-        <h3>Яндекс Директ</h3>
+        <h3>Реклама в Яндекс Директе</h3>
         <ul>
-          <li>Сбор запросов и минус-слов, поиск и РСЯ</li>
-          <li>Объявления, быстрые ссылки, ретаргетинг</li>
-          <li>Цели в Метрике, отчет по заявкам каждый месяц</li>
-          <li>Кабинет через eLama: закрывающие документы для бухгалтерии</li>
+          <li>Подбор запросов и слов, по которым показываться не нужно</li>
+          <li>Реклама в поиске и на сайтах-партнерах Яндекса (РСЯ)</li>
+          <li>Догоняющая реклама для тех, кто уже был на сайте</li>
+          <li>Цели в Метрике и отчет по заявкам каждый месяц</li>
         </ul>
         <div class="price">от 20 000 ₽<small>настройка, ведение от 20 000 ₽ в месяц</small></div>
       </div>
       <div class="svc">
-        <h3>Лендинг под рекламу</h3>
+        <h3>Сайт под рекламу</h3>
         <ul>
-          <li>Первый экран под главный запрос</li>
+          <li>Готов за 3 дня по примерам, которые вам нравятся</li>
+          <li>Первый экран под главный запрос клиента</li>
           <li>Цены, работы, отзывы, ответы на частые вопросы</li>
-          <li>Формы и кнопки мессенджеров с целями в Метрике</li>
-          <li>Сначала бесплатный прототип, потом запуск</li>
+          <li>Кнопки мессенджеров и цели в Метрике</li>
         </ul>
-        <div class="price">по задаче<small>прототип покажу до оплаты</small></div>
+        <div class="price">3 дня<small>стоимость зависит от объема</small></div>
       </div>
       <div class="svc">
-        <h3>Баннеры и креативы</h3>
+        <h3>Баннеры и картинки</h3>
         <ul>
-          <li>Изображения для РСЯ и ретаргетинга</li>
-          <li>Обложки и картинки для Яндекс Бизнеса и соцсетей</li>
+          <li>Картинки для рекламы в Директе</li>
+          <li>Обложки для Яндекс Бизнеса и соцсетей</li>
+          <li>Презентации продукции для рассылки</li>
         </ul>
-        <div class="price">по задаче<small>обычно вместе с Директом</small></div>
+        <div class="price">по задаче<small>обычно вместе с рекламой</small></div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <section id="raboty">
+  <section id="raboty" class="band-noir">
+    <div class="wrap">
       <h2>Сайты заказчиков</h2>
       <p class="sub">Сайты, которые я сделала для заказчиков. Любой можно открыть и проверить с телефона.</p>
 
@@ -265,11 +385,19 @@ footer{padding:36px 0 48px;font-size:14px;color:var(--soft)}
             <div class="phone"><div class="screen"><img src="shots/mebelier-temnyi-m.jpg" alt="Сайт Мебельер45 на телефоне" loading="lazy"></div></div>
           </div>
           <div class="meta">
-            <span class="tag">Свежий прототип</span>
+            <span class="tag">Новый проект</span>
             <h3>Мебельер45</h3>
-            <p>Кухни и шкафы на заказ, Курган. Прототип сайта под рекламу в Директе: цены, реальные работы из ВК и отзывы из 2ГИС.</p>
+            <p>Кухни и шкафы на заказ, Курган. Сайт под рекламу в Директе: цены, реальные работы из ВК и отзывы из 2ГИС.</p>
             <a href="https://skutinajulia.github.io/mebelier45-demo-temnyi/" target="_blank" rel="noopener">Открыть сайт</a>
           </div>
+        </article>
+
+        <article class="work">
+          <div class="dev">
+            <div class="laptop"><div class="screen"><img src="shots/raspil-d.jpg" alt="Сайт Распил ДСП на ноутбуке" loading="lazy"></div></div>
+            <div class="phone"><div class="screen"><img src="shots/raspil-m.jpg" alt="Сайт Распил ДСП на телефоне" loading="lazy"></div></div>
+          </div>
+          <div class="meta"><h3>Распил ДСП</h3><p>Распил ЛДСП и МДФ, Москва. Сайт и реклама в Директе.</p><span class="res">50 заявок за первые 12 дней</span><a href="https://raspil-dsp77.ru/" target="_blank" rel="noopener">raspil-dsp77.ru</a></div>
         </article>
 
         <article class="work">
@@ -278,6 +406,14 @@ footer{padding:36px 0 48px;font-size:14px;color:var(--soft)}
             <div class="phone"><div class="screen"><img src="shots/format45-m.jpg" alt="Сайт Формат+ на телефоне" loading="lazy"></div></div>
           </div>
           <div class="meta"><h3>Формат+</h3><p>Натяжные потолки, Курган. Калькулятор стоимости и заявка на замер.</p><a href="https://format45.ru/" target="_blank" rel="noopener">format45.ru</a></div>
+        </article>
+
+        <article class="work">
+          <div class="dev">
+            <div class="laptop"><div class="screen"><img src="shots/mebel77-d.jpg" alt="Сайт СК Мебель на ноутбуке" loading="lazy"></div></div>
+            <div class="phone"><div class="screen"><img src="shots/mebel77-m.jpg" alt="Сайт СК Мебель на телефоне" loading="lazy"></div></div>
+          </div>
+          <div class="meta"><h3>СК Мебель</h3><p>Кухни и мебель на заказ, Москва и область. Сайт и реклама в Директе.</p><a href="https://mebel-na-zakaz77.ru/" target="_blank" rel="noopener">mebel-na-zakaz77.ru</a></div>
         </article>
 
         <article class="work">
@@ -295,28 +431,27 @@ footer{padding:36px 0 48px;font-size:14px;color:var(--soft)}
           </div>
           <div class="meta"><h3>Крыши и фасады</h3><p>Кровельные и фасадные материалы, Екатеринбург. Каталог и расчет стоимости.</p><a href="https://krifas.ru/" target="_blank" rel="noopener">krifas.ru</a></div>
         </article>
-
-        <article class="work">
-          <div class="dev">
-            <div class="laptop"><div class="screen"><img src="shots/raspil-d.jpg" alt="Сайт Распил ДСП на ноутбуке" loading="lazy"></div></div>
-            <div class="phone"><div class="screen"><img src="shots/raspil-m.jpg" alt="Сайт Распил ДСП на телефоне" loading="lazy"></div></div>
-          </div>
-          <div class="meta"><h3>Распил ДСП</h3><p>Распил ЛДСП и МДФ, Москва. Бесплатный расчет за 15 минут.</p><a href="https://raspil-dsp77.ru/" target="_blank" rel="noopener">raspil-dsp77.ru</a></div>
-        </article>
-
-        <article class="work">
-          <div class="dev">
-            <div class="laptop"><div class="screen"><img src="shots/mebel77-d.jpg" alt="Сайт СК Мебель на ноутбуке" loading="lazy"></div></div>
-            <div class="phone"><div class="screen"><img src="shots/mebel77-m.jpg" alt="Сайт СК Мебель на телефоне" loading="lazy"></div></div>
-          </div>
-          <div class="meta"><h3>СК Мебель</h3><p>Кухни и мебель на заказ от фабрики, Москва. Замер и дизайн-проект в подарок.</p><a href="https://mebel-na-zakaz77.ru/" target="_blank" rel="noopener">mebel-na-zakaz77.ru</a></div>
-        </article>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <section id="koncepty">
-      <h2>Концепты лендингов для популярных ниш</h2>
-      <p class="sub">Так может выглядеть ваш сайт. В каждом концепте есть интерактивный элемент, который помогает человеку решиться: калькулятор, тест или расписание.</p>
+  <section id="otzyvy">
+    <div class="wrap">
+      <h2>Что говорят заказчики</h2>
+      <p class="sub">Благодарственные письма, переписки и видео целиком лежат в группе ВКонтакте.</p>
+      <div class="reviews">
+        <figure class="rev"><q>По результатам проделанной работы количество обращений и заявок в нашу компанию увеличилось более чем на 100%.</q><figcaption class="who"><b>ООО «Спальни &amp; Кровати»</b>Генеральный директор, благодарственное письмо</figcaption></figure>
+        <figure class="rev"><q>Посмотрел изменения по сайту, ты молодец! Без лишних вопросов за три дня сделала то, что я год сделать не мог!</q><figcaption class="who"><b>Компания КОРБИС</b>Переписка с заказчиком</figcaption></figure>
+        <figure class="rev"><q>Ты очень крутой специалист, гибкая, скоростная, мне было комфортно работать с тобой!</q><figcaption class="who"><b>Елена</b>Руководитель команды в агентстве Red Bananas</figcaption></figure>
+        <figure class="rev video"><div><q>Видеоотзыв Евгения Андрианова</q><p>Основатель онлайн-школы «Академия интернет-маркетинга» о рекламе его марафона: цена заявки снизилась с 2 000 до 700 ₽.</p></div><figcaption class="who"><a href="https://vk.com/topic-199996545_48564892" target="_blank" rel="noopener">Смотреть отзывы в ВКонтакте</a></figcaption></figure>
+      </div>
+    </div>
+  </section>
+
+  <section id="koncepty" class="band-mist">
+    <div class="wrap">
+      <h2>Каким может быть ваш сайт</h2>
+      <p class="sub">Концепты для популярных ниш. В каждом есть элемент, который помогает человеку решиться: калькулятор, тест или расписание.</p>
 
       <div class="concepts">
         <article class="work">
@@ -355,34 +490,36 @@ footer{padding:36px 0 48px;font-size:14px;color:var(--soft)}
           <div class="meta"><h3>Банкротство физлиц</h3><p>Тест «подходит ли вам процедура» за минуту.</p><a href="concepts/bankrotstvo/" target="_blank" rel="noopener">Открыть концепт</a></div>
         </article>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <section>
+  <section>
+    <div class="wrap">
       <h2>Как работаем</h2>
-      <p class="sub">От первого сообщения до первых заявок обычно проходит 2-3 недели.</p>
+      <p class="sub">Сайт готов за 3 дня, реклама запускается сразу после него.</p>
       <ol class="steps">
-        <li><b>Разбор</b><span>Смотрю сайт, конкурентов и спрос в Вордстате. Считаю бюджет.</span></li>
-        <li><b>Прототип</b><span>Показываю первый экран и текст объявлений до оплаты.</span></li>
-        <li><b>Запуск</b><span>Собираю сайт и кампании, настраиваю цели в Метрике.</span></li>
-        <li><b>Ведение</b><span>Чищу запросы, снижаю цену заявки, раз в месяц присылаю отчет.</span></li>
+        <li><b>Разбор</b><span>Смотрю ваш бизнес, конкурентов и спрос в Вордстате. Считаю бюджет.</span></li>
+        <li><b>Сайт за 3 дня</b><span>По примерам, которые вам нравятся, собираю сайт под вашу нишу.</span></li>
+        <li><b>Запуск рекламы</b><span>Настраиваю кампании и цели в Метрике, кабинет оформлен на вас.</span></li>
+        <li><b>Ведение</b><span>Убираю лишние показы, снижаю цену заявки, раз в месяц присылаю отчет.</span></li>
       </ol>
-    </section>
+    </div>
+  </section>
 
-    <section class="final">
+  <section class="final band-mist">
+    <div class="wrap">
       <a class="ring" href="https://vk.link/juliadirect" target="_blank" rel="noopener">
-        <svg class="ring-line" viewBox="0 0 400 400" aria-hidden="true"><circle cx="200" cy="200" r="196" fill="none" stroke="currentColor" stroke-width="1.2" stroke-dasharray="3 7"/></svg>
-        <span class="ring-small">Нужна реклама или сайт?</span>
+        <svg class="ring-line" viewBox="0 0 400 400" aria-hidden="true"><circle cx="200" cy="200" r="194"/></svg>
+        <span class="ring-small">Нужен сайт или реклама?</span>
         <span class="ring-big">Напишите<br>Юлии</span>
         <svg class="ring-arrow" viewBox="0 0 40 40" aria-hidden="true"><path d="M8 32 L32 8 M14 8 H32 V26" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
       </a>
-      <p class="final-note">Пришлите ссылку на сайт или группу. В ответ напишу, сколько примерно будет стоить заявка и с чего начать.</p>
-    </section>
+      <p class="final-note">Пришлите ссылку на сайт или группу и 1-3 сайта, которые вам нравятся. В ответ напишу, сколько будет стоить заявка и с чего начать.</p>
+      <p class="final-contacts"><a href="tel:+79638635841">+7 (963) 863-58-41</a><a href="https://vk.link/juliadirect" target="_blank" rel="noopener">ВКонтакте</a></p>
+    </div>
+  </section>
+</main>
 
-  </main>
-
-  <footer>Юлия Скутина, интернет-маркетолог · JuliaDirect</footer>
-</div>
-
-
+<footer class="band-noir"><div class="wrap">Юлия Скутина, интернет-маркетолог · JuliaDirect</div></footer>
 </body>
 </html>
