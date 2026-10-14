@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Цветочная студия - концепт</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Prata&family=Manrope:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{--cream:#FBF6F1;--blush:#F4DCD6;--coral:#E4694F;--rose:#C83E63;--leaf:#3F6B52;--ink:#2A2024}
+*{box-sizing:border-box;margin:0}
+body{background:var(--cream);color:var(--ink);font:400 17px/1.6 "Manrope",sans-serif}
+.wrap{max-width:1180px;margin:0 auto;padding:0 24px}
+header{display:flex;justify-content:space-between;align-items:center;padding:22px 0}
+.logo{font:28px "Prata",serif;color:var(--rose)}
+nav a{color:var(--ink);text-decoration:none;margin-left:22px;font-weight:500}
+.tel{font-weight:700}
+.hero{display:grid;grid-template-columns:1.05fr .95fr;gap:44px;align-items:center;padding:26px 0 70px}
+h1{font:400 clamp(38px,5vw,66px)/1.06 "Prata",serif;color:var(--ink)}
+h1 em{font-style:normal;color:var(--rose)}
+.lead{margin:22px 0 28px;max-width:27em}
+.btn{display:inline-block;background:var(--rose);color:#fff;text-decoration:none;padding:17px 30px;border-radius:999px;font-weight:700;border:0;font-family:inherit;font-size:17px;cursor:pointer}
+.btn:hover{background:#ab2f51}
+.btn:focus-visible,.chips button:focus-visible{outline:3px solid var(--leaf);outline-offset:3px}
+.facts{display:flex;gap:26px;flex-wrap:wrap;margin-top:30px;font-size:15px;color:#6b5a60}
+.facts b{display:block;font:400 26px "Prata",serif;color:var(--leaf)}
+.pic{aspect-ratio:4/5;border-radius:999px 999px 24px 24px;overflow:hidden;background:var(--blush)}
+.pic img{width:100%;height:100%;object-fit:cover;object-position:50% 60%;display:block}
+section{padding:60px 0}
+h2{font:400 clamp(28px,3.4vw,42px)/1.15 "Prata",serif;margin-bottom:10px}
+.sub{color:#6b5a60;margin-bottom:28px;max-width:34em}
+.picker{display:grid;grid-template-columns:1fr 1fr;gap:34px;background:#fff;border-radius:30px;padding:34px;align-items:start;box-shadow:0 18px 50px rgba(120,60,70,.08)}
+.q{margin-bottom:22px}
+.q p{font-weight:700;margin-bottom:10px}
+.chips{display:flex;gap:8px;flex-wrap:wrap}
+.chips button{border:1px solid #e6cfc9;background:#fff;border-radius:999px;padding:10px 18px;font:500 15px "Manrope";cursor:pointer;color:var(--ink)}
+.chips button[aria-pressed=true]{background:var(--rose);color:#fff;border-color:var(--rose)}
+.res{border-radius:22px;overflow:hidden;background:var(--blush)}
+.res img{width:100%;height:auto;aspect-ratio:4/3;align-self:start;object-fit:cover;object-position:50% 55%;display:block}
+.res div{padding:20px 22px}
+.res h3{font:400 24px "Prata",serif}
+.res p{color:#5d4a51;margin:4px 0 12px}
+.res b{font:400 30px "Prata",serif;color:var(--rose)}
+.del{display:grid;grid-template-columns:1fr 1fr;gap:34px;align-items:center}
+.del img{width:100%;border-radius:24px;aspect-ratio:16/10;object-fit:cover;display:block}
+.del ul{list-style:none;padding:0}
+.del li{padding:12px 0;border-top:1px solid #ead9d3}
+footer{padding:30px 0 48px;font-size:14px;color:#8a7880}
+@media(max-width:860px){.hero,.picker,.del{grid-template-columns:1fr}.pic{max-width:300px;margin:0 auto;order:-1}.hero{padding-bottom:40px}nav a:not(.tel){display:none}.picker{padding:22px}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header><div class="logo">Флора</div><nav><a href="#podbor">Подобрать букет</a><a href="#dostavka">Доставка</a><a class="tel" href="#podbor">+7 (000) 000-00-00</a></nav></header>
+<main>
+<div class="hero">
+  <div>
+    <h1>Букет, который <em>выглядит как на фото</em> и приедет за 90 минут</h1>
+    <p class="lead">Собираем из свежих пионов и ранункулюсов в день заказа. Присылаем фото готового букета до отправки курьера.</p>
+    <a class="btn" href="#podbor">Подобрать букет за минуту</a>
+    <div class="facts"><div><b>90 минут</b>доставка по городу</div><div><b>Фото</b>перед отправкой</div><div><b>Замена</b>если не понравился</div></div>
+  </div>
+  <div class="pic"><img src="wrap.webp" alt="Букет из пионов и ранункулюсов в крафтовой упаковке" width="900" height="1192"></div>
+</div>
+
+<section id="podbor">
+  <h2>Подберем букет за минуту</h2>
+  <p class="sub">Выберите повод и бюджет, покажем букет, который чаще всего берут в такой ситуации.</p>
+  <div class="picker">
+    <div>
+      <div class="q"><p>Повод</p><div class="chips" id="occ" role="group" aria-label="Повод">
+        <button type="button" aria-pressed="true" data-v="bd">День рождения</button>
+        <button type="button" aria-pressed="false" data-v="date">Свидание</button>
+        <button type="button" aria-pressed="false" data-v="wed">Свадьба</button>
+        <button type="button" aria-pressed="false" data-v="sorry">Просто так</button>
+      </div></div>
+      <div class="q"><p>Бюджет</p><div class="chips" id="bud" role="group" aria-label="Бюджет">
+        <button type="button" aria-pressed="false" data-v="0">до 3 000 ₽</button>
+        <button type="button" aria-pressed="true" data-v="1">3 000-5 000 ₽</button>
+        <button type="button" aria-pressed="false" data-v="2">от 5 000 ₽</button>
+      </div></div>
+      <a class="btn" href="#dostavka" id="order">Заказать этот букет</a>
+    </div>
+    <div class="res"><img id="rimg" src="wrap.webp" alt="" width="900" height="1192"><div><h3 id="rt">Яркий букет «Праздник»</h3><p id="rd">Пионы и ранункулюсы, зелень эвкалипта. Дарят на день рождения чаще всего.</p><b id="rp">4 500 ₽</b></div></div>
+  </div>
+</section>
+
+<section id="dostavka">
+  <div class="del">
+    <img src="delivery.webp" alt="Курьер оставил букет у двери" width="1920" height="1067" loading="lazy">
+    <div>
+      <h2>Доставка без сюрпризов</h2>
+      <ul>
+        <li>Курьер звонит за 15 минут и не раскрывает, от кого цветы, если вы просили</li>
+        <li>Открытка с вашим текстом входит в стоимость</li>
+        <li>Если получателя нет дома, держим букет в прохладе и ждем до часа</li>
+      </ul>
+    </div>
+  </div>
+</section>
+</main>
+<footer>Концепт лендинга · демо-макет · собрала JuliaDirect, реквизиты ставятся при запуске</footer>
+</div>
+<script>
+(function(){
+var B={
+ bd:{t:'Солнечный букет «Именинница»',d:'Желтые ранункулюсы, белые пионы и эвкалипт. Теплый, радостный, виден издалека.',img:'bd.webp',pos:'50% 45%'},
+ date:{t:'Один пион «Для нее»',d:'Один крупный пион на длинном стебле в бумаге. Красиво, без лишнего, не смущает.',img:'peony.webp',pos:'50% 72%'},
+ wed:{t:'Нежный букет «Невеста»',d:'Белые пионы и кремовые розы, эвкалипт. Собираем под цвет платья.',img:'wedding.webp',pos:'50% 55%'},
+ sorry:{t:'Сиреневое настроение',d:'Сиреневые пионы и ранункулюсы с эвкалиптом. Для тех случаев, когда повода нет.',img:'lilac.webp',pos:'50% 55%'}
+};
+var P={bd:[2900,4500,6900],date:[2500,3900,5900],wed:[3500,5500,8500],sorry:[2200,3600,5200]};
+var o='bd',b=1;
+function fmt(n){return String(n).replace(/\B(?=(\d{3})+(?!\d))/g,' ')+' ₽'}
+function show(){var x=B[o];rimg.src=x.img;rimg.style.objectPosition=x.pos;rt.textContent=x.t;rd.textContent=x.d;rp.textContent=fmt(P[o][b])}
+function bind(id,fn){document.querySelectorAll('#'+id+' button').forEach(function(el){el.onclick=function(){document.querySelectorAll('#'+id+' button').forEach(function(z){z.setAttribute('aria-pressed','false')});el.setAttribute('aria-pressed','true');fn(el.dataset.v);show()}})}
+bind('occ',function(v){o=v});bind('bud',function(v){b=+v});show();
+})();
+</script>
+</body>
+</html>
