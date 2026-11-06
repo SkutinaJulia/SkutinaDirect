@@ -852,7 +852,7 @@ m.addEventListener('touchend',function(e){if(x0===null)return;var dx=e.changedTo
   <button type="button">Хорошо</button>
 </div>
 <script>
-/* плашка cookie: показывается только если подключена Метрика; Метрика включается после «Хорошо» */
+/* плашка cookie: показывается только если подключена Метрика; Метрика работает сразу, плашка только сообщает о cookie */
 (function(){
   /* номер счетчика Яндекс Метрики */
   var METRIKA_ID=114102941;
@@ -865,11 +865,12 @@ m.addEventListener('touchend',function(e){if(x0===null)return;var dx=e.changedTo
   }
   /* без Метрики cookie нет, и плашка не нужна */
   if(!METRIKA_ID)return;
-  if(ok()){metrika();return}
+  metrika();
+  if(ok())return;
   /* плашка появляется, когда человек долистал до третьего экрана */
   function onScroll(){if(window.scrollY>=window.innerHeight*2){c.hidden=false;window.removeEventListener('scroll',onScroll)}}
   window.addEventListener('scroll',onScroll,{passive:true});onScroll();
-  c.querySelector('button').addEventListener('click',function(){try{localStorage.setItem(KEY,'1')}catch(e){}c.hidden=true;metrika()});
+  c.querySelector('button').addEventListener('click',function(){try{localStorage.setItem(KEY,'1')}catch(e){}c.hidden=true});
 })();
 </script>
 <footer class="band-noir"><div class="wrap foot">
