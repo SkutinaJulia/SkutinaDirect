@@ -350,6 +350,11 @@ footer{padding:30px 0 40px;font-size:14px;color:#BDAFB5}
 @media (max-width:1080px){
   .top nav a.hide-md{display:none}
 }
+/* на телефоне аватар в шапке не нужен: ниже большой портрет */
+@media (max-width:640px){
+  .top{justify-content:flex-end}
+  .top .ava{display:none}
+}
 @media (max-width:980px){
   .intro-grid{grid-template-columns:1fr 1fr;gap:32px}
   .portrait{grid-column:1/-1;grid-row:1;width:min(300px,70%);justify-self:center}
@@ -435,7 +440,7 @@ h1,h2,h3,.name,.ir b,.case b,.svc .price,.ring-big,.clients{letter-spacing:-.005
 <div class="band-mist">
   <div class="wrap">
     <header class="top">
-      <a class="ava" href="#" aria-label="Юлия Скутина, в начало страницы"><img src="avatar-pink.webp?v=4" alt="" width="52" height="52"><img class="ph-blue" src="avatar-blue.webp?v=4" alt="" width="52" height="52"></a>
+      <a class="ava" href="#" aria-label="Юлия Скутина, в начало страницы"><img src="avatar-pink.webp?v=5" alt="" width="52" height="52"><img class="ph-blue" src="avatar-blue.webp?v=5" alt="" width="52" height="52"></a>
       <nav aria-label="Разделы">
         <a class="hide-md" href="#raboty">Сайты</a>
         <a class="hide-md" href="#kejsy">Кейсы</a>
