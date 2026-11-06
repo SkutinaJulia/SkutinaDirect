@@ -117,8 +117,9 @@ img{display:block;max-width:100%}
 
 /* шапка */
 .top{display:flex;justify-content:space-between;align-items:center;padding:22px 0}
-.name{font:400 22px "Yeseva One",serif;text-decoration:none}
-.ava{position:relative;display:block;width:52px;height:52px;border-radius:50%;overflow:hidden;box-shadow:0 0 0 1px var(--blush),0 0 0 4px var(--pearl),0 0 0 5px var(--blush)}
+.brand{display:flex;align-items:center;gap:16px;text-decoration:none}
+.name{font:400 22px "Yeseva One",serif;text-decoration:none;color:var(--berry)}
+.ava{position:relative;display:block;flex:none;width:52px;height:52px;border-radius:50%;overflow:hidden;box-shadow:0 0 0 1px var(--blush),0 0 0 4px var(--pearl),0 0 0 5px var(--blush)}
 .ava img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:opacity .7s ease}
 .ava .ph-blue{opacity:0}
 body.blue .ava .ph-blue{opacity:1}
@@ -131,9 +132,11 @@ body.blue .ava .ph-blue{opacity:1}
 
 /* первый экран */
 .intro{padding:18px 0 60px}
-.intro-title{text-align:center;font:400 clamp(34px,4.6vw,66px)/1.05 "Yeseva One",serif;letter-spacing:-.01em}
-.intro-title .duo{display:flex;justify-content:center;align-items:center;flex-wrap:wrap;gap:.2em .55em;font-size:.5em;margin-top:.4em;color:var(--rose-d)}
-.intro-grid{display:grid;grid-template-columns:1.1fr minmax(260px,360px) 1fr;gap:44px;align-items:center;margin-top:36px}
+.intro-title{text-align:center;font:400 clamp(30px,4vw,58px)/1.08 "Yeseva One",serif;letter-spacing:-.01em}
+/* имя под заголовком только на телефоне: на ПК оно в шапке рядом с аватаром */
+.intro-name{display:none;text-align:center;font:400 18px/1.2 "Yeseva One",serif;margin-top:16px;color:var(--rose-d)}
+.intro-name small{display:block;font:500 14px/1.3 "Manrope",sans-serif;color:#5A4C53;margin-bottom:4px}
+.intro-grid{display:grid;grid-template-columns:1.1fr minmax(260px,360px) 1fr;gap:44px;align-items:center;margin-top:64px}
 
 .offer{padding:0 0 22px;margin-bottom:22px;border-bottom:1px solid var(--blush)}
 .offer:last-of-type{border-bottom:0;margin-bottom:26px}
@@ -142,8 +145,16 @@ body.blue .ava .ph-blue{opacity:1}
 .offer h2{font:400 clamp(28px,2.6vw,38px)/1.08 "Yeseva One",serif;margin-bottom:8px;max-width:none}
 .offer p{font-size:15.5px;line-height:1.55;font-weight:500;max-width:25em}
 .intro-cta{display:flex;flex-wrap:wrap;align-items:center;gap:14px 22px}
-.intro-cta .alt{font-weight:700;text-decoration:none;border-bottom:2px solid var(--noir)}
-.intro-cta .alt:hover{color:var(--berry);border-color:var(--berry)}
+.intro-cta .alt{background:var(--berry);transition:background .25s}
+.intro-cta .alt:hover{background:var(--noir)}
+/* «Смотреть кейсы» стоит под цифрами справа */
+.intro-right .intro-cta{justify-content:flex-end}
+/* в три колонки цифры плотнее, чтобы правая колонка была по высоте как левая и кнопки стояли на одной линии */
+@media (min-width:981px){
+  .intro-right .ir{margin-bottom:8px}
+  .intro-right .ir span{margin-top:3px}
+  .intro-right .intro-cta{margin-top:6px}
+}
 
 .portrait{position:relative;aspect-ratio:3/4.3}
 .oval{position:absolute;inset:6%;border-radius:999px;overflow:hidden;background:var(--rose)}
@@ -353,7 +364,8 @@ footer{padding:30px 0 40px;font-size:14px;color:#BDAFB5}
 /* на телефоне аватар в шапке не нужен: ниже большой портрет */
 @media (max-width:640px){
   .top{justify-content:flex-end}
-  .top .ava{display:none}
+  .top .brand{display:none}
+  .intro-name{display:block}
 }
 @media (max-width:980px){
   .intro-grid{grid-template-columns:1fr 1fr;gap:32px}
@@ -376,8 +388,9 @@ footer{padding:30px 0 40px;font-size:14px;color:#BDAFB5}
   .wrap{padding:0 16px}
   .top nav a:not(.pill){display:none}
   .intro{padding-top:8px}
-  .intro-title .duo{flex-direction:column;gap:.25em}
-  .intro-grid{grid-template-columns:1fr;gap:26px}
+  .intro-grid{grid-template-columns:1fr;gap:26px;margin-top:36px}
+  .intro-cta .btn{flex:1 1 100%;text-align:center}
+  .intro-right .intro-cta{grid-column:1/-1}
   .portrait{width:min(190px,54%)}
   .intro-right{text-align:left;display:grid;grid-template-columns:1fr 1fr;gap:0 18px}
   .ir span{margin-left:0}
@@ -394,7 +407,6 @@ footer{padding:30px 0 40px;font-size:14px;color:#BDAFB5}
 }
 @media (prefers-reduced-motion:reduce){.ring-line{animation:none}.clients{animation-duration:60s}html{scroll-behavior:auto}} /* правка Юли: бегущая строка ниш работает и в режиме энергосбережения телефона, только медленнее */
 h1,h2,h3,.name,.ir b,.case b,.svc .price,.ring-big,.clients{letter-spacing:-.005em}
-.duo .vr{display:inline-block;flex:none;width:.5em;height:.44em;border-radius:50%;transform:rotate(-24deg);background:linear-gradient(135deg,#ffffff 0%,#fbf3f1 35%,#f1e3e1 62%,#fffaf8 82%,#e8d6d4 100%);border:1px solid rgba(255,255,255,.95);box-shadow:0 0 0 1px rgba(160,115,115,.28),inset 0 0 3px rgba(190,150,150,.35)}
 .clients .sep{color:var(--blush);font-weight:400}
 .clients ul,.clients li{list-style:none}
 .portrait::before{content:"";position:absolute;inset:2.5%;border:1px solid var(--noir);border-radius:999px;opacity:.55}
@@ -440,7 +452,7 @@ h1,h2,h3,.name,.ir b,.case b,.svc .price,.ring-big,.clients{letter-spacing:-.005
 <div class="band-mist">
   <div class="wrap">
     <header class="top">
-      <a class="ava" href="#" aria-label="Юлия Скутина, в начало страницы"><img src="avatar-pink.webp?v=6" alt="" width="52" height="52"><img class="ph-blue" src="avatar-blue.webp?v=6" alt="" width="52" height="52"></a>
+      <a class="brand" href="#" aria-label="Юлия Скутина, в начало страницы"><span class="ava"><img src="avatar-pink.webp?v=6" alt="" width="52" height="52"><img class="ph-blue" src="avatar-blue.webp?v=6" alt="" width="52" height="52"></span><span class="name">Юлия Скутина</span></a>
       <nav aria-label="Разделы">
         <a class="hide-md" href="#raboty">Сайты</a>
         <a class="hide-md" href="#kejsy">Кейсы</a>
@@ -452,7 +464,8 @@ h1,h2,h3,.name,.ir b,.case b,.svc .price,.ring-big,.clients{letter-spacing:-.005
     </header>
 
     <div class="intro">
-      <h1 class="intro-title">Юлия Скутина<span class="duo"><span>Сайт под ключ</span> <span>и настройка Яндекс.Директ</span></span></h1>
+      <h1 class="intro-title">Сайт под ключ<br> и&nbsp;настройка Яндекс.Директ</h1>
+      <p class="intro-name"><small>Специалист с опытом более 6 лет</small>Юлия Скутина</p>
 
       <div class="intro-grid">
         <div class="intro-left">
@@ -467,9 +480,7 @@ h1,h2,h3,.name,.ir b,.case b,.svc .price,.ring-big,.clients{letter-spacing:-.005
             <p>Объявление обещает то же, что первый экран сайта, поэтому клиенты не уходят, а оставляют заявку. Бюджет считаю до запуска.</p>
           </div>
           <div class="intro-cta">
-            <a class="btn" href="https://t.me/JuliaSkutina" target="_blank" rel="noopener">Обсудить проект</a>
-            <a class="alt" href="#kejsy">Смотреть кейсы</a>
-          </div>
+            <a class="btn" href="https://t.me/JuliaSkutina" target="_blank" rel="noopener">Обсудить проект</a>          </div>
         </div>
 
         <div class="portrait" tabindex="0" role="button" aria-pressed="false" aria-label="Сменить цвет сайта: розовый или голубой">
@@ -481,6 +492,7 @@ h1,h2,h3,.name,.ir b,.case b,.svc .price,.ring-big,.clients{letter-spacing:-.005
           <div class="ir"><b>×2,5</b><span>оборот от рекламного бюджета, автовебинар врача</span></div>
           <div class="ir"><b>до&nbsp;10</b><span>заявок в день с рекламы сайта производства, до&nbsp;2&nbsp;500&nbsp;₽ за заявку</span></div>
           <div class="ir"><b>1,3&nbsp;млн&nbsp;₽</b><span>самый крупный рекламный бюджет в неделю</span></div>
+          <div class="intro-cta"><a class="btn alt" href="#kejsy">Смотреть кейсы</a></div>
         </div>
       </div>
 
