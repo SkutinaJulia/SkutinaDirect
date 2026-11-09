@@ -1,0 +1,710 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Сайты для малого бизнеса · Юлия Скутина</title>
+<meta name="description" content="Сайты за 3 дня для малого бизнеса: сайты заказчиков и демо-проекты. Сайт-визитка по готовому демо – 15 000 ₽.">
+<meta name="robots" content="noindex">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='30' fill='%23100C17'/%3E%3Ccircle cx='32' cy='32' r='9' fill='%23A64756'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Yeseva+One&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+/* палитра и шрифты как на основном сайте (index-v2.html) */
+:root{--rose:#A36C6C;--rose-d:#8E5A5B;--mist:#EADDD9;--noir:#100C17;--pearl:#F3ECE9;--hair:#E8909B;--berry:#A64756;--blush:#D9BDB3;--muted:#6E5F66}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth}
+body{background:var(--pearl);color:var(--noir);font:400 17px/1.65 "Manrope",system-ui,sans-serif;-webkit-font-smoothing:antialiased;hyphens:none}
+a{color:inherit}
+img{display:block;max-width:100%}
+.wrap{max-width:1240px;margin:0 auto;padding:0 24px}
+:focus-visible{outline:3px solid var(--noir);outline-offset:3px;border-radius:4px}
+.band-mist{background:var(--mist)}
+.top{display:flex;justify-content:space-between;align-items:center;padding:22px 0}
+.brand{display:flex;align-items:center;gap:16px;text-decoration:none}
+.name{position:relative;top:-2px;font:400 22px/1 "Yeseva One",serif;color:var(--berry)}
+.ava{display:block;flex:none;width:52px;height:52px;border-radius:50%;overflow:hidden;box-shadow:0 0 0 1px var(--blush),0 0 0 4px var(--mist),0 0 0 5px var(--blush)}
+.ava img{width:100%;height:100%;object-fit:cover}
+.top nav{display:flex;gap:26px;align-items:center}
+.top nav a{text-decoration:none;font-weight:600}
+.top nav a:hover{color:var(--berry)}
+.top .tel{font-weight:700}
+.pill{background:var(--noir);color:var(--pearl)!important;padding:12px 22px;border-radius:40px}
+.pill:hover{background:var(--berry)}
+.vt-hero{display:grid;grid-template-columns:1.05fr .95fr;gap:40px;align-items:center;padding:40px 0 90px}
+.vt-hero h1{font:400 clamp(36px,5vw,68px)/1.04 "Yeseva One",serif;letter-spacing:-.005em;margin:0 0 22px;max-width:11em}
+.vt-hero h1 em{font-style:normal;color:var(--berry)}
+.vt-hero .lead{font-size:clamp(17px,1.6vw,19px);font-weight:500;max-width:30em}
+/* веер телефонов: скриншот сайта сам прокручивается внутри рамки */
+.fan{position:relative;height:clamp(460px,48vw,600px)}
+.fan::before{content:"";position:absolute;inset:6% 4%;border-radius:50%;background:radial-gradient(closest-side,var(--pearl),transparent 72%)}
+.fan .fp{position:absolute;top:50%;left:50%;width:var(--pw);aspect-ratio:9/19.2;border-radius:calc(var(--pw) * .14);background:var(--noir);padding:calc(var(--pw) * .035);box-shadow:0 40px 60px -30px rgba(16,12,23,.5),inset 0 0 0 2px #2A2530}
+.fan .fp:nth-child(1){--pw:clamp(200px,20vw,262px);transform:translate(-50%,-50%);z-index:3}
+.fan .fp:nth-child(2){--pw:clamp(160px,15.5vw,206px);transform:translate(-122%,-44%) rotate(-7deg);z-index:2}
+.fan .fp:nth-child(3){--pw:clamp(160px,15.5vw,206px);transform:translate(22%,-42%) rotate(7deg);z-index:1}
+.fp .notch{position:absolute;top:calc(var(--pw) * .055);left:50%;transform:translateX(-50%);width:28%;height:calc(var(--pw) * .06);background:var(--noir);border-radius:999px;z-index:2}
+.fp .scr{position:relative;display:block;width:100%;height:100%;border-radius:calc(var(--pw) * .11);overflow:hidden;background:#fff}
+.fp .scr img{position:absolute;left:0;top:0;width:100%;height:auto;will-change:transform;animation:scrollshot var(--dur,22s) ease-in-out infinite alternate;animation-play-state:paused;pointer-events:none}
+.fan.live .fp .scr img{animation-play-state:running}
+@keyframes scrollshot{0%,8%{transform:translateY(0)}92%,100%{transform:translateY(var(--sh,0%))}}
+.vt-nums{display:flex;flex-wrap:wrap;gap:22px 48px;margin-top:34px}
+.vt-nums b{display:block;font:400 clamp(34px,3.4vw,50px)/1 "Yeseva One",serif;color:var(--berry)}
+.vt-nums span{display:block;font-size:14px;font-weight:600;color:rgba(16,12,23,.62);margin-top:6px}
+.btn{display:inline-block;background:var(--noir);color:var(--pearl);text-decoration:none;font-weight:700;padding:16px 28px;border-radius:40px}
+.btn:hover{background:var(--berry)}
+.vt-cta{display:flex;flex-wrap:wrap;gap:14px 22px;align-items:center;margin-top:34px}
+.vt-cta .link{font-weight:700;color:var(--berry)}
+footer{background:var(--noir);color:#BDAFB5;padding:30px 0 40px;font-size:14px}
+footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px 30px}
+footer a{color:inherit;text-underline-offset:3px}
+footer a:hover{color:var(--hair)}
+@media (max-width:640px){
+  .wrap{padding:0 16px}
+  .top nav a:not(.pill){display:none}
+  .name{font-size:19px}
+  .ava{width:42px;height:42px}
+  .vt-hero{padding:16px 0 56px}
+  .vt-cta .btn{flex:1 1 100%;text-align:center}
+  .fan{height:440px}
+  .fan .fp:nth-child(1){--pw:190px}
+  .fan .fp:nth-child(2),.fan .fp:nth-child(3){--pw:148px}
+  .fan .fp:nth-child(2){transform:translate(-112%,-44%) rotate(-7deg)}
+  .fan .fp:nth-child(3){transform:translate(12%,-42%) rotate(7deg)}
+}
+@media (max-width:960px){.vt-hero{grid-template-columns:1fr}}
+@media (prefers-reduced-motion:reduce){.fp .scr img{animation:none}}
+
+/* ===== витрина: блок для вставки в основной сайт (все классы vt-, цвета из переменных сайта) ===== */
+.vt{background:var(--pearl);color:var(--noir);padding:92px 0}
+.vt-eyebrow{font-size:13px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--berry);margin-bottom:12px}
+.vt h2{font:400 clamp(34px,4vw,56px)/1.06 "Yeseva One",serif;letter-spacing:-.005em;max-width:17em}
+.vt-sub{color:var(--muted);font-size:18px;margin:16px 0 34px;max-width:36em}
+.vt-chips{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:20px}
+.vt-chip{font:700 15px "Manrope",sans-serif;color:var(--noir);background:transparent;border:1px solid var(--blush);border-radius:40px;padding:10px 18px;cursor:pointer;transition:background .25s,color .25s,border-color .25s}
+.vt-chip span{font-weight:500;opacity:.55;margin-left:4px}
+.vt-chip:hover{border-color:var(--berry)}
+.vt-chip[aria-pressed="true"]{background:var(--noir);border-color:var(--noir);color:var(--pearl)}
+/* ряд: браузер с телефоном и описание, стороны чередуются */
+.vt-row{display:grid;grid-template-columns:1.35fr 1fr;gap:40px 72px;align-items:center;padding:64px 0;border-top:1px dashed var(--blush)}
+.vt-row.first{border-top:0}
+.vt-row[hidden]{display:none}
+.vt-row.flip{grid-template-columns:1fr 1.35fr}
+.vt-row.flip .vt-dev{order:2}
+.vt-dev{position:relative;display:block;text-decoration:none;margin:0 7% 7% 0}
+.vt-browser{display:block;background:#fff;border-radius:14px;overflow:hidden;box-shadow:0 0 0 1px var(--blush),0 30px 60px -36px rgba(16,12,23,.45)}
+.vt-bar{display:flex;align-items:center;gap:6px;height:34px;padding:0 14px;background:#F7F2F0;border-bottom:1px solid var(--blush)}
+.vt-bar i{flex:none;width:9px;height:9px;border-radius:50%;background:var(--blush)}
+.vt-url{margin-left:12px;font-size:12px;color:var(--muted);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.vt-shot{display:block;aspect-ratio:16/10;overflow:hidden;background:#fff}
+.vt-shot img{width:100%;height:100%;object-fit:cover;object-position:top;pointer-events:none;user-select:none}
+/* телефон: скриншот сайта сам прокручивается внутри рамки, пока ряд на экране */
+.vt-phone{position:absolute;right:-7%;bottom:-7%;width:23%;min-width:96px;aspect-ratio:9/19.2;background:var(--noir);border-radius:22px;padding:5px;box-shadow:0 30px 40px -24px rgba(16,12,23,.6),inset 0 0 0 2px #2A2530}
+.vt-phone .notch{position:absolute;top:9px;left:50%;transform:translateX(-50%);width:30%;height:9px;background:var(--noir);border-radius:999px;z-index:2}
+.vt-phone .scr{position:relative;display:block;width:100%;height:100%;border-radius:17px;overflow:hidden;background:#fff}
+.vt-phone .scr img{position:absolute;left:0;top:0;width:100%;height:auto;will-change:transform;animation:scrollshot var(--dur,22s) ease-in-out infinite alternate;animation-play-state:paused;pointer-events:none}
+.vt-row.live .vt-phone .scr img{animation-play-state:running}
+.vt-tags{display:flex;flex-wrap:wrap;align-items:center;gap:8px 14px;font-size:15px;color:var(--muted);margin-bottom:14px}
+.vt-tag{font-size:13px;font-weight:700;color:var(--noir);background:var(--mist);border-radius:10px;padding:5px 12px}
+.vt-tag.real{background:var(--berry);color:#fff}
+.vt-meta h3{font:400 clamp(30px,3.2vw,46px)/1.08 "Yeseva One",serif;letter-spacing:-.005em}
+.vt-note{color:var(--muted);font-size:17px;margin-top:14px;max-width:26em}
+.vt-res{color:var(--berry);font-weight:700;margin-top:10px}
+.vt-open{display:inline-block;margin-top:22px;font-weight:700;font-size:18px;text-decoration:none;color:var(--berry)}
+.vt-open:hover{color:var(--noir)}
+.vt-more{display:block;margin:10px auto 0;font:700 16px "Manrope",sans-serif;color:var(--noir);background:transparent;border:1px solid var(--noir);border-radius:40px;padding:15px 28px;cursor:pointer}
+.vt-more:hover{background:var(--noir);color:var(--pearl)}
+.vt-more[hidden]{display:none}
+/* услуги и цены */
+.vt-block{padding-top:96px}
+.vt-block-line{margin-top:0}
+.vt-block .vt-sub{margin-bottom:40px}
+.vt-svc{list-style:none;padding:0;border-top:1px solid var(--blush)}
+.vt-svc li{display:flex;justify-content:space-between;align-items:baseline;gap:20px;padding:24px 0;border-bottom:1px solid var(--blush)}
+.vt-svc b{font:400 clamp(21px,2vw,26px)/1.2 "Yeseva One",serif}
+.vt-svc span{font:400 clamp(21px,2vw,26px)/1.2 "Yeseva One",serif;color:var(--berry);white-space:nowrap}
+/* как работаю: четыре карточки */
+.vt-steps{list-style:none;padding:0;display:grid;grid-template-columns:repeat(4,1fr);gap:16px;counter-reset:s;margin-top:40px}
+.vt-steps li{counter-increment:s;background:var(--mist);border-radius:22px;padding:24px 22px 28px}
+.vt-steps li::before{content:counter(s);display:grid;place-items:center;width:40px;height:40px;border-radius:50%;background:var(--berry);color:#fff;font:700 16px/1 "Manrope",sans-serif;margin-bottom:20px}
+.vt-steps b{display:block;font:400 21px/1.2 "Yeseva One",serif;margin-bottom:8px}
+.vt-steps span{color:var(--muted);font-size:15.5px;line-height:1.55}
+/* написать: темная карточка и переписка */
+.vt-write{display:grid;grid-template-columns:1.1fr 1fr;gap:40px 60px;align-items:center;margin-top:110px;padding:64px;border-radius:28px;background:var(--noir);color:var(--pearl)}
+.vt-write .vt-eyebrow{color:var(--hair)}
+.vt-write h2{max-width:10em}
+.vt-write-lead{color:#BDAFB5;font-size:18px;margin:20px 0 32px;max-width:24em}
+.vt-tg{display:inline-flex;align-items:center;gap:10px;background:var(--hair);color:var(--noir);text-decoration:none;font-weight:700;padding:16px 28px;border-radius:40px;transition:background .25s}
+.vt-tg:hover{background:var(--pearl)}
+.vt-tg svg{width:20px;height:20px}
+/* окно Telegram: сообщение посетителя уже в чате, Юлия печатает ответ */
+.vt-chat{border-radius:22px;overflow:hidden;background:#fff;color:#000;box-shadow:0 30px 60px -30px rgba(0,0,0,.7);font-family:-apple-system,"Segoe UI",Roboto,"Manrope",sans-serif}
+.vt-chat-head{display:flex;align-items:center;gap:12px;padding:14px 18px;background:#fff;border-bottom:1px solid #E7E7E7}
+.vt-chat-head img{width:44px;height:44px;border-radius:50%;object-fit:cover}
+.vt-chat-head b{display:block;font-size:16px;font-weight:600}
+.vt-chat-head small{color:#3390EC;font-size:13.5px}
+.vt-chat-body{display:flex;flex-direction:column;gap:10px;padding:20px 18px 22px;background-color:#B9D59A;background-image:radial-gradient(rgba(255,255,255,.22) 1.2px,transparent 1.6px),linear-gradient(140deg,#D6E7A8 0%,#9FCB9C 45%,#C9DFA0 100%);background-size:22px 22px,100% 100%}
+.vt-day{align-self:center;font-size:13px;font-weight:600;color:#fff;background:rgba(74,104,62,.42);border-radius:12px;padding:3px 10px}
+.vt-msg{align-self:flex-end;max-width:86%;background:#EFFDDE;color:#000;font-size:15.5px;line-height:1.42;padding:9px 12px 7px 14px;border-radius:16px 16px 4px 16px;box-shadow:0 1px 1px rgba(0,0,0,.12)}
+.vt-msg small{display:block;text-align:right;font-size:12px;color:#4FAE4E;margin-top:2px}
+.vt-typing{align-self:flex-start;display:inline-flex;gap:5px;background:#fff;border-radius:16px 16px 16px 4px;padding:13px 16px;box-shadow:0 1px 1px rgba(0,0,0,.12)}
+.vt-typing i{width:8px;height:8px;border-radius:50%;background:#8E959B;animation:vt-dot 1.2s infinite ease-in-out}
+.vt-typing i:nth-child(2){animation-delay:.18s}
+.vt-typing i:nth-child(3){animation-delay:.36s}
+@keyframes vt-dot{0%,60%,100%{opacity:.3;transform:translateY(0)}30%{opacity:1;transform:translateY(-3px)}}
+/* сообщение «прилетает», потом появляются точки */
+.vt-chat.go .vt-msg{animation:vt-in .45s ease-out both}
+.vt-chat.go .vt-typing{animation:vt-in .35s ease-out .9s both}
+@keyframes vt-in{from{opacity:0;transform:translateY(10px) scale(.96)}to{opacity:1;transform:none}}
+@media (prefers-reduced-motion:reduce){.vt-typing i,.vt-chat.go .vt-msg,.vt-chat.go .vt-typing{animation:none}}
+@media (max-width:900px){
+  .vt-steps{grid-template-columns:1fr 1fr}
+  .vt-write{grid-template-columns:1fr;padding:48px 36px}
+  .vt-row,.vt-row.flip{grid-template-columns:1fr;padding:48px 0}
+  .vt-row.flip .vt-dev{order:0}
+}
+@media (max-width:640px){
+  .vt{padding:68px 0}
+  .vt-chips{gap:8px}
+  .vt-chip{padding:9px 14px;font-size:14px}
+  .vt-dev{margin:0 5% 9% 0}
+  .vt-phone{right:-5%;min-width:84px;border-radius:15px;padding:4px}
+  .vt-phone .scr{border-radius:11px}
+  .vt-phone .notch{top:7px;height:6px}
+  .vt-block{padding-top:72px}
+  .vt-svc li{flex-direction:column;align-items:flex-start;gap:4px;padding:20px 0}
+  .vt-steps{grid-template-columns:1fr}
+  .vt-write{padding:36px 22px;margin-top:72px}
+  .vt-tg{width:100%;justify-content:center}
+}
+@media (prefers-reduced-motion:reduce){.vt-phone .scr img{animation:none}html{scroll-behavior:auto}}
+/* ===== конец блока витрины ===== */
+</style>
+</head>
+<body>
+<div class="band-mist">
+  <div class="wrap">
+    <header class="top">
+      <a class="brand" href="../" aria-label="Юлия Скутина, на главную"><span class="ava"><img src="../avatar-pink.webp?v=6" alt="" width="52" height="52"></span><span class="name">Юлия Скутина</span></a>
+      <nav aria-label="Разделы">
+        <a href="../">Главная</a>
+        <a href="../#uslugi">Услуги</a>
+        <a class="tel" href="tel:+79638635841">+7 (963) 863-58-41</a>
+        <a class="pill" href="https://t.me/JuliaSkutina" target="_blank" rel="noopener">Написать</a>
+      </nav>
+    </header>
+
+    <div class="vt-hero">
+     <div>
+      <h1>Сайты <em>за&nbsp;3&nbsp;дня</em> для малого бизнеса</h1>
+      <p class="lead">Соберу готовое демо вашего сайта до разговора – вы смотрите результат, а потом решаете.</p>
+      <div class="vt-nums">
+        <div><b>32</b><span>сайта в работах</span></div>
+        <div><b>10</b><span>ниш</span></div>
+        <div><b>15&nbsp;000&nbsp;₽</b><span>сайт-визитка по готовому демо</span></div>
+      </div>
+      <div class="vt-cta">
+        <a class="btn" href="https://t.me/JuliaSkutina" target="_blank" rel="noopener">Написать в Telegram</a>
+      </div>
+     </div>
+     <div class="fan" aria-label="Мои демо-сайты"><a class="fp" href="https://skutinajulia.github.io/sakura-irkutsk/" target="_blank" rel="noopener" aria-label="Демо-сайт Сакура" style="--dur:20s"><span class="notch"></span><span class="scr"><img src="../shots/vitrina/sakura-irkutsk-m.webp" alt=""></span></a><a class="fp" href="https://skutinajulia.github.io/indeks-skorosti/" target="_blank" rel="noopener" aria-label="Демо-сайт Индекс скорости" style="--dur:24s"><span class="notch"></span><span class="scr"><img src="../shots/vitrina/indeks-skorosti-m.webp" alt=""></span></a><a class="fp" href="https://skutinajulia.github.io/mebelier45-demo-temnyi/" target="_blank" rel="noopener" aria-label="Демо-сайт Мебельер 45" style="--dur:28s"><span class="notch"></span><span class="scr"><img src="../shots/vitrina/mebelier45-m.webp" alt=""></span></a></div>
+    </div>
+  </div>
+</div>
+
+<main>
+  <!-- ВИТРИНА: этот section целиком можно вставить в index-v2.html (вместе с CSS-блоком «витрина» и скриптом внизу) -->
+  <section id="vitrina" class="vt">
+    <div class="wrap">
+      <p class="vt-eyebrow">Работы</p>
+      <h2>Сайты, которые я сделала</h2>
+      <p class="vt-sub">Проекты: так выглядят сайты, которые я собираю для бизнесов.</p>
+      <div class="vt-chips" role="group" aria-label="Фильтр по нишам">
+          <button type="button" class="vt-chip" data-f="" aria-pressed="true">Все <span>32</span></button>
+          <button type="button" class="vt-chip" data-f="Готовые" aria-pressed="false">Готовые <span>6</span></button>
+          <button type="button" class="vt-chip" data-f="Цветы" aria-pressed="false">Цветы <span>15</span></button>
+          <button type="button" class="vt-chip" data-f="Мебель" aria-pressed="false">Мебель <span>7</span></button>
+          <button type="button" class="vt-chip" data-f="Фитнес" aria-pressed="false">Фитнес <span>3</span></button>
+          <button type="button" class="vt-chip" data-f="Шиномонтаж" aria-pressed="false">Шиномонтаж <span>1</span></button>
+      </div>
+      <div class="vt-list">
+        <article class="vt-row" data-n="Готовые">
+          <a class="vt-dev" href="https://skutinajulia.github.io/mebelier45-demo-temnyi/" target="_blank" rel="noopener" aria-label="Открыть сайт Мебельер 45">
+            <span class="vt-browser"><span class="vt-bar"><i></i><i></i><i></i><span class="vt-url">skutinajulia.github.io/mebelier45-demo-temnyi</span></span><span class="vt-shot"><img src="../shots/mebelier-temnyi-d.jpg" alt="" loading="lazy" width="1200" height="750"></span></span>
+            <span class="vt-phone"><span class="notch"></span><span class="scr"><img src="../shots/vitrina/mebelier45-m.webp" alt="" loading="lazy"></span></span>
+          </a>
+          <div class="vt-meta">
+            <p class="vt-tags"><span class="vt-tag real">Новый проект</span>Кухни и шкафы на заказ · Курган</p>
+            <h3>Мебельер 45</h3>
+            <p class="vt-note">Сайт под рекламу в Яндекс.Директ: конфигуратор фасадов, цены, работы и отзывы.</p>
+            <a class="vt-open" href="https://skutinajulia.github.io/mebelier45-demo-temnyi/" target="_blank" rel="noopener">Открыть сайт →</a>
+          </div>
+        </article>
+        <article class="vt-row" data-n="Шиномонтаж">
+          <a class="vt-dev" href="https://skutinajulia.github.io/indeks-skorosti/" target="_blank" rel="noopener" aria-label="Открыть сайт Индекс скорости">
+            <span class="vt-browser"><span class="vt-bar"><i></i><i></i><i></i><span class="vt-url">skutinajulia.github.io/indeks-skorosti</span></span><span class="vt-shot"><img src="../shots/vitrina/indeks-skorosti-d.webp" alt="" loading="lazy" width="1200" height="750"></span></span>
+            <span class="vt-phone"><span class="notch"></span><span class="scr"><img src="../shots/vitrina/indeks-skorosti-m.webp" alt="" loading="lazy"></span></span>
+          </a>
+          <div class="vt-meta">
+            <p class="vt-tags"><span class="vt-tag">Демо-проект</span>Шиномонтаж · Екатеринбург</p>
+            <h3>Индекс скорости</h3>
+            <p class="vt-note">Онлайн-запись в WhatsApp, фото бокса с карточки, отзывы дословно.</p>
+            <a class="vt-open" href="https://skutinajulia.github.io/indeks-skorosti/" target="_blank" rel="noopener">Открыть сайт →</a>
+          </div>
+        </article>
+        <article class="vt-row" data-n="Готовые">
+          <a class="vt-dev" href="https://raspil-dsp77.ru/" target="_blank" rel="noopener" aria-label="Открыть сайт Распил ДСП">
+            <span class="vt-browser"><span class="vt-bar"><i></i><i></i><i></i><span class="vt-url">raspil-dsp77.ru</span></span><span class="vt-shot"><img src="../shots/raspil-d.jpg" alt="" loading="lazy" width="1200" height="750"></span></span>
+            <span class="vt-phone"><span class="notch"></span><span class="scr"><img src="../shots/vitrina/raspil-m.webp" alt="" loading="lazy"></span></span>
+          </a>
+          <div class="vt-meta">
+            <p class="vt-tags"><span class="vt-tag real">Сайт заказчика</span>Распил ЛДСП и МДФ · Москва</p>
+            <h3>Распил ДСП</h3>
+            <p class="vt-note">Сайт и реклама в Директе.</p><p class="vt-res">50 заявок за первые 12 дней</p>
+            <a class="vt-open" href="https://raspil-dsp77.ru/" target="_blank" rel="noopener">Открыть сайт →</a>
+          </div>
+        </article>
+        <article class="vt-row" data-n="Цветы">
+          <a class="vt-dev" href="https://skutinajulia.github.io/iris-irkutsk/" target="_blank" rel="noopener" aria-label="Открыть сайт Ирис">
+            <span class="vt-browser"><span class="vt-bar"><i></i><i></i><i></i><span class="vt-url">skutinajulia.github.io/iris-irkutsk</span></span><span class="vt-shot"><img src="../shots/vitrina/iris-irkutsk-d.webp" alt="" loading="lazy" width="1200" height="750"></span></span>
+            <span class="vt-phone"><span class="notch"></span><span class="scr"><img src="../shots/vitrina/iris-irkutsk-m.webp" alt="" loading="lazy"></span></span>
+          </a>
+          <div class="vt-meta">
+            <p class="vt-tags"><span class="vt-tag">Демо-проект</span>Цветы с доставкой · Иркутск</p>
+            <h3>Ирис</h3>
+            <p class="vt-note">Каталог букетов с ценами: выбрал букет – он уже в заказе.</p>
+            <a class="vt-open" href="https://skutinajulia.github.io/iris-irkutsk/" target="_blank" rel="noopener">Открыть сайт →</a>
+          </div>
+        </article>
+        <article class="vt-row" data-n="Готовые">
+          <a class="vt-dev" href="https://skdevelopment-77.ru/" target="_blank" rel="noopener" aria-label="Открыть сайт SK Development">
+            <span class="vt-browser"><span class="vt-bar"><i></i><i></i><i></i><span class="vt-url">skdevelopment-77.ru</span></span><span class="vt-shot"><img src="../shots/skdev77-d.jpg" alt="" loading="lazy" width="1200" height="750"></span></span>
+            <span class="vt-phone"><span class="notch"></span><span class="scr"><img src="../shots/vitrina/skdev-m.webp" alt="" loading="lazy"></span></span>
+          </a>
+          <div class="vt-meta">
+            <p class="vt-tags"><span class="vt-tag real">Сайт заказчика</span>Загородные дома под ключ</p>
+            <h3>SK Development</h3>
+            <p class="vt-note">Новое направление клиента: сайт и реклама в Директе, 2025 год.</p><p class="vt-res">Первые заявки пошли после запуска сайта и рекламы</p>
+            <a class="vt-open" href="https://skdevelopment-77.ru/" target="_blank" rel="noopener">Открыть сайт →</a>
+          </div>
+        </article>
+        <article class="vt-row" data-n="Мебель">
+          <a class="vt-dev" href="https://skutinajulia.github.io/solar-mebel-krasnodar/" target="_blank" rel="noopener" aria-label="Открыть сайт Солар Мебель">
+            <span class="vt-browser"><span class="vt-bar"><i></i><i></i><i></i><span class="vt-url">skutinajulia.github.io/solar-mebel-krasnodar</span></span><span class="vt-shot"><img src="../shots/vitrina/solar-mebel-krasnodar-d.webp" alt="" loading="lazy" width="1200" height="750"></span></span>
+            <span class="vt-phone"><span class="notch"></span><span class="scr"><img src="../shots/vitrina/solar-mebel-krasnodar-m.webp" alt="" loading="lazy"></span></span>
+          </a>
+          <div class="vt-meta">
+            <p class="vt-tags"><span class="vt-tag">Демо-проект</span>Мебель на заказ · Краснодар</p>
+            <h3>Солар Мебель</h3>
+            <p class="vt-note">Работы с ценами и запись на замер.</p>
+            <a class="vt-open" href="https://skutinajulia.github.io/solar-mebel-krasnodar/" target="_blank" rel="noopener">Открыть сайт →</a>
+          </div>
+        </article>
+        <article class="vt-row" data-n="Готовые">
+          <a class="vt-dev" href="https://mebel-na-zakaz77.ru/" target="_blank" rel="noopener" aria-label="Открыть сайт СК Мебель">
+            <span class="vt-browser"><span class="vt-bar"><i></i><i></i><i></i><span class="vt-url">mebel-na-zakaz77.ru</span></span><span class="vt-shot"><img src="../shots/mebel77-d.jpg" alt="" loading="lazy" width="1200" height="750"></span></span>
+            <span class="vt-phone"><span class="notch"></span><span class="scr"><img src="../shots/vitrina/mebel77-m.webp" alt="" loading="lazy"></span></span>
+          </a>
+          <div class="vt-meta">
+            <p class="vt-tags"><span class="vt-tag real">Сайт заказчика</span>Кухни и мебель на заказ · Москва и область</p>
+            <h3>СК Мебель</h3>
+            <p class="vt-note">Сайт и реклама в Директе.</p>
+            <a class="vt-open" href="https://mebel-na-zakaz77.ru/" target="_blank" rel="noopener">Открыть сайт →</a>
+          </div>
+        </article>
+        <article class="vt-row" data-n="Мебель">
+          <a class="vt-dev" href="https://skutinajulia.github.io/zavtra-mebel-krasnodar/" target="_blank" rel="noopener" aria-label="Открыть сайт Завтра мебель">
+            <span class="vt-browser"><span class="vt-bar"><i></i><i></i><i></i><span class="vt-url">skutinajulia.github.io/zavtra-mebel-krasnodar</span></span><span class="vt-shot"><img src="../shots/vitrina/zavtra-mebel-krasnodar-d.webp" alt="" loading="lazy" width="1200" height="750"></span></span>
+            <span class="vt-phone"><span class="notch"></span><span class="scr"><img src="../shots/vitrina/zavtra-mebel-krasnodar-m.webp" alt="" loading="lazy"></span></span>
+          </a>
+          <div class="vt-meta">
+            <p class="vt-tags"><span class="vt-tag">Демо-проект</span>Мебель на заказ · Краснодар</p>
+            <h3>Завтра мебель</h3>
+            <p class="vt-note">Цвета сайта подобраны под кухню с главного фото.</p>
+            <a class="vt-open" href="https://skutinajulia.github.io/zavtra-mebel-krasnodar/" target="_blank" rel="noopener">Открыть сайт →</a>
+          </div>
+        </article>
+        <article class="vt-row" data-n="Готовые">
+          <a class="vt-dev" href="https://format45.ru/" target="_blank" rel="noopener" aria-label="Открыть сайт Формат+">
+            <span class="vt-browser"><span class="vt-bar"><i></i><i></i><i></i><span class="vt-url">format45.ru</span></span><span class="vt-shot"><img src="../shots/format45-d.jpg" alt="" loading="lazy" width="1200" height="750"></span></span>
+            <span class="vt-phone"><span class="notch"></span><span class="scr"><img src="../shots/vitrina/format45-m.webp" alt="" loading="lazy"></span></span>
+          </a>
+          <div class="vt-meta">
+            <p class="vt-tags"><span class="vt-tag real">Сайт заказчика</span>Натяжные потолки · Курган</p>
+            <h3>Формат+</h3>
+            <p class="vt-note">Калькулятор стоимости и заявка на замер. Заявки приходят не только с сайта, но и с Авито.</p>
+            <a class="vt-open" href="https://format45.ru/" target="_blank" rel="noopener">Открыть сайт →</a>
+          </div>
+        </article>
+        <article class="vt-row" data-n="Цветы">
+          <a class="vt-dev" href="https://skutinajulia.github.io/f-161-irkutsk/" target="_blank" rel="noopener" aria-label="Открыть сайт Ф-1.61">
+            <span class="vt-browser"><span class="vt-bar"><i></i><i></i><i></i><span class="vt-url">skutinajulia.github.io/f-161-irkutsk</span></span><span class="vt-shot"><img src="../shots/vitrina/f-161-irkutsk-d.webp" alt="" loading="lazy" width="1200" height="750"></span></span>
+            <span class="vt-phone"><span class="notch"></span><span class="scr"><img src="../shots/vitrina/f-161-irkutsk-m.webp" alt="" loading="lazy"></span></span>
+          </a>
+          <div class="vt-meta">
+            <p class="vt-tags"><span class="vt-tag">Демо-проект</span>Цветы с доставкой · Иркутск</p>
+            <h3>Ф-1.61</h3>
+            <p class="vt-note">Сайт цветочного магазина: букеты, цены, доставка</p>
+            <a class="vt-open" href="https://skutinajulia.github.io/f-161-irkutsk/" target="_blank" rel="noopener">Открыть сайт →</a>
+          </div>
+        </article>
+        <article class="vt-row" data-n="Готовые">
+          <a class="vt-dev" href="https://www.chermyanina.ru/" target="_blank" rel="noopener" aria-label="Открыть сайт Лилия Чермянина">
+            <span class="vt-browser"><span class="vt-bar"><i></i><i></i><i></i><span class="vt-url">chermyanina.ru</span></span><span class="vt-shot"><img src="../shots/chermyanina-d.jpg" alt="" loading="lazy" width="1200" height="750"></span></span>
+            <span class="vt-phone"><span class="notch"></span><span class="scr"><img src="../shots/chermyanina-m.jpg" alt="" loading="lazy"></span></span>
+          </a>
+          <div class="vt-meta">
+            <p class="vt-tags"><span class="vt-tag real">Сайт заказчика</span>Клинический психолог · Москва и Владимир</p>
+            <h3>Лилия Чермянина</h3>
+            <p class="vt-note">Личный сайт с записью на сессию.</p>
+            <a class="vt-open" href="https://www.chermyanina.ru/" target="_blank" rel="noopener">Открыть сайт →</a>
+          </div>
+        </article>
+        <article class="vt-row" data-n="Фитнес">
+          <a class="vt-dev" href="https://skutinajulia.github.io/liva-tyumen/" target="_blank" rel="noopener" aria-label="Открыть сайт Liva">
+            <span class="vt-browser"><span class="vt-bar"><i></i><i></i><i></i><span class="vt-url">skutinajulia.github.io/liva-tyumen</span></span><span class="vt-shot"><img src="../shots/vitrina/liva-tyumen-d.webp" alt="" loading="lazy" width="1200" height="750"></span></span>
+            <span class="vt-phone"><span class="notch"></span><span class="scr"><img src="../shots/vitrina/liva-tyumen-m.webp" alt="" loading="lazy"></span></span>
+          </a>
+          <div class="vt-meta">
+            <p class="vt-tags"><span class="vt-tag">Демо-проект</span>Фитнес-студия · Тюмень</p>
+            <h3>Liva</h3>
+            <p class="vt-note">Сайт фитнес-студии: направления, расписание, запись</p>
+            <a class="vt-open" href="https://skutinajulia.github.io/liva-tyumen/" target="_blank" rel="noopener">Открыть сайт →</a>
+          </div>
+        </article>
+        <article class="vt-row" data-n="Мебель">
+          <a class="vt-dev" href="https://skutinajulia.github.io/mebel-plus-krasnodar/" target="_blank" rel="noopener" aria-label="Открыть сайт Мебель +">
+            <span class="vt-browser"><span class="vt-bar"><i></i><i></i><i></i><span class="vt-url">skutinajulia.github.io/mebel-plus-krasnodar</span></span><span class="vt-shot"><img src="../shots/vitrina/mebel-plus-krasnodar-d.webp" alt="" loading="lazy" width="1200" height="750"></span></span>
+            <span class="vt-phone"><span class="notch"></span><span class="scr"><img src="../shots/vitrina/mebel-plus-krasnodar-m.webp" alt="" loading="lazy"></span></span>
+          </a>
+          <div class="vt-meta">
+            <p class="vt-tags"><span class="vt-tag">Демо-проект</span>Мебель на заказ · Краснодар</p>
+            <h3>Мебель +</h3>
+            <p class="vt-note">Сайт мастерской мебели на заказ: кухни, шкафы, расчет</p>
+            <a class="vt-open" href="https://skutinajulia.github.io/mebel-plus-krasnodar/" target="_blank" rel="noopener">Открыть сайт →</a>
+          </div>
+        </article>
+        <article class="vt-row" data-n="Цветы">
+          <a class="vt-dev" href="https://skutinajulia.github.io/mersi-flowers-irkutsk/" target="_blank" rel="noopener" aria-label="Открыть сайт Мерси Флауэрс">
+            <span class="vt-browser"><span class="vt-bar"><i></i><i></i><i></i><span class="vt-url">skutinajulia.github.io/mersi-flowers-irkutsk</span></span><span class="vt-shot"><img src="../shots/vitrina/mersi-flowers-irkutsk-d.webp" alt="" loading="lazy" width="1200" height="750"></span></span>
+            <span class="vt-phone"><span class="notch"></span><span class="scr"><img src="../shots/vitrina/mersi-flowers-irkutsk-m.webp" alt="" loading="lazy"></span></span>
+          </a>
+          <div class="vt-meta">
+            <p class="vt-tags"><span class="vt-tag">Демо-проект</span>Цветы с доставкой · Иркутск</p>
+            <h3>Мерси Флауэрс</h3>
+            <p class="vt-note">Сайт цветочного магазина: букеты, цены, доставка</p>
+            <a class="vt-open" href="https://skutinajulia.github.io/mersi-flowers-irkutsk/" target="_blank" rel="noopener">Открыть сайт →</a>
+          </div>
+        </article>
+        <article class="vt-row" data-n="Фитнес">
+          <a class="vt-dev" href="https://skutinajulia.github.io/op-jumping-tyumen/" target="_blank" rel="noopener" aria-label="Открыть сайт ОП!">
+            <span class="vt-browser"><span class="vt-bar"><i></i><i></i><i></i><span class="vt-url">skutinajulia.github.io/op-jumping-tyumen</span></span><span class="vt-shot"><img src="../shots/vitrina/op-jumping-tyumen-d.webp" alt="" loading="lazy" width="1200" height="750"></span></span>
+            <span class="vt-phone"><span class="notch"></span><span class="scr"><img src="../shots/vitrina/op-jumping-tyumen-m.webp" alt="" loading="lazy"></span></span>
+          </a>
+          <div class="vt-meta">
+            <p class="vt-tags"><span class="vt-tag">Демо-проект</span>Фитнес-студия · Тюмень</p>
+            <h3>ОП!</h3>
+            <p class="vt-note">Сайт студии джампинга: тренировки на батутах, цены, запись</p>
+            <a class="vt-open" href="https://skutinajulia.github.io/op-jumping-tyumen/" target="_blank" rel="noopener">Открыть сайт →</a>
+          </div>
+        </article>
+        <article class="vt-row" data-n="Мебель">
+          <a class="vt-dev" href="https://skutinajulia.github.io/verno-kuhni-kurgan/" target="_blank" rel="noopener" aria-label="Открыть сайт Верно кухни">
+            <span class="vt-browser"><span class="vt-bar"><i></i><i></i><i></i><span class="vt-url">skutinajulia.github.io/verno-kuhni-kurgan</span></span><span class="vt-shot"><img src="../shots/vitrina/verno-kuhni-kurgan-d.webp" alt="" loading="lazy" width="1200" height="750"></span></span>
+            <span class="vt-phone"><span class="notch"></span><span class="scr"><img src="../shots/vitrina/verno-kuhni-kurgan-m.webp" alt="" loading="lazy"></span></span>
+          </a>
+          <div class="vt-meta">
+            <p class="vt-tags"><span class="vt-tag">Демо-проект</span>Мебель на заказ · Курган</p>
+            <h3>Верно кухни</h3>
+            <p class="vt-note">Сайт мастерской мебели на заказ: кухни, шкафы, расчет</p>
+            <a class="vt-open" href="https://skutinajulia.github.io/verno-kuhni-kurgan/" target="_blank" rel="noopener">Открыть сайт →</a>
+          </div>
+        </article>
+        <article class="vt-row" data-n="Цветы">
+          <a class="vt-dev" href="https://skutinajulia.github.io/art-flora-irkutsk/" target="_blank" rel="noopener" aria-label="Открыть сайт Арт флора">
+            <span class="vt-browser"><span class="vt-bar"><i></i><i></i><i></i><span class="vt-url">skutinajulia.github.io/art-flora-irkutsk</span></span><span class="vt-shot"><img src="../shots/vitrina/art-flora-irkutsk-d.webp" alt="" loading="lazy" width="1200" height="750"></span></span>
+            <span class="vt-phone"><span class="notch"></span><span class="scr"><img src="../shots/vitrina/art-flora-irkutsk-m.webp" alt="" loading="lazy"></span></span>
+          </a>
+          <div class="vt-meta">
+            <p class="vt-tags"><span class="vt-tag">Демо-проект</span>Цветы с доставкой · Иркутск</p>
+            <h3>Арт флора</h3>
+            <p class="vt-note">Сайт цветочного магазина: букеты, цены, доставка</p>
+            <a class="vt-open" href="https://skutinajulia.github.io/art-flora-irkutsk/" target="_blank" rel="noopener">Открыть сайт →</a>
+          </div>
+        </article>
+        <article class="vt-row" data-n="Фитнес">
+          <a class="vt-dev" href="https://skutinajulia.github.io/nebo-jumping-tyumen/" target="_blank" rel="noopener" aria-label="Открыть сайт Небо джампинг">
+            <span class="vt-browser"><span class="vt-bar"><i></i><i></i><i></i><span class="vt-url">skutinajulia.github.io/nebo-jumping-tyumen</span></span><span class="vt-shot"><img src="../shots/vitrina/nebo-jumping-tyumen-d.webp" alt="" loading="lazy" width="1200" height="750"></span></span>
+            <span class="vt-phone"><span class="notch"></span><span class="scr"><img src="../shots/vitrina/nebo-jumping-tyumen-m.webp" alt="" loading="lazy"></span></span>
+          </a>
+          <div class="vt-meta">
+            <p class="vt-tags"><span class="vt-tag">Демо-проект</span>Фитнес-студия · Тюмень</p>
+            <h3>Небо джампинг</h3>
+            <p class="vt-note">Женская фитнес-студия: джампинг, силовые и йога, запись</p>
+            <a class="vt-open" href="https://skutinajulia.github.io/nebo-jumping-tyumen/" target="_blank" rel="noopener">Открыть сайт →</a>
+          </div>
+        </article>
+        <article class="vt-row" data-n="Мебель">
+          <a class="vt-dev" href="https://skutinajulia.github.io/ed-mebel-krasnodar/" target="_blank" rel="noopener" aria-label="Открыть сайт ED-Mebel">
+            <span class="vt-browser"><span class="vt-bar"><i></i><i></i><i></i><span class="vt-url">skutinajulia.github.io/ed-mebel-krasnodar</span></span><span class="vt-shot"><img src="../shots/vitrina/ed-mebel-krasnodar-d.webp" alt="" loading="lazy" width="1200" height="750"></span></span>
+            <span class="vt-phone"><span class="notch"></span><span class="scr"><img src="../shots/vitrina/ed-mebel-krasnodar-m.webp" alt="" loading="lazy"></span></span>
+          </a>
+          <div class="vt-meta">
+            <p class="vt-tags"><span class="vt-tag">Демо-проект</span>Мебель на заказ · Краснодар</p>
+            <h3>ED-Mebel</h3>
+            <p class="vt-note">Сайт мастерской мебели на заказ: кухни, шкафы, расчет</p>
+            <a class="vt-open" href="https://skutinajulia.github.io/ed-mebel-krasnodar/" target="_blank" rel="noopener">Открыть сайт →</a>
+          </div>
+        </article>
+        <article class="vt-row" data-n="Цветы">
+          <a class="vt-dev" href="https://skutinajulia.github.io/neobychny-tsvetochny-irkutsk/" target="_blank" rel="noopener" aria-label="Открыть сайт Необычный цветочный">
+            <span class="vt-browser"><span class="vt-bar"><i></i><i></i><i></i><span class="vt-url">skutinajulia.github.io/neobychny-tsvetochny-irkutsk</span></span><span class="vt-shot"><img src="../shots/vitrina/neobychny-tsvetochny-irkutsk-d.webp" alt="" loading="lazy" width="1200" height="750"></span></span>
+            <span class="vt-phone"><span class="notch"></span><span class="scr"><img src="../shots/vitrina/neobychny-tsvetochny-irkutsk-m.webp" alt="" loading="lazy"></span></span>
+          </a>
+          <div class="vt-meta">
+            <p class="vt-tags"><span class="vt-tag">Демо-проект</span>Цветы с доставкой · Иркутск</p>
+            <h3>Необычный цветочный</h3>
+            <p class="vt-note">Сайт цветочного магазина: букеты, цены, доставка</p>
+            <a class="vt-open" href="https://skutinajulia.github.io/neobychny-tsvetochny-irkutsk/" target="_blank" rel="noopener">Открыть сайт →</a>
+          </div>
+        </article>
+        <article class="vt-row" data-n="Мебель">
+          <a class="vt-dev" href="https://skutinajulia.github.io/trend-mebel-krasnodar/" target="_blank" rel="noopener" aria-label="Открыть сайт Тренд Мебель">
+            <span class="vt-browser"><span class="vt-bar"><i></i><i></i><i></i><span class="vt-url">skutinajulia.github.io/trend-mebel-krasnodar</span></span><span class="vt-shot"><img src="../shots/vitrina/trend-mebel-krasnodar-d.webp" alt="" loading="lazy" width="1200" height="750"></span></span>
+            <span class="vt-phone"><span class="notch"></span><span class="scr"><img src="../shots/vitrina/trend-mebel-krasnodar-m.webp" alt="" loading="lazy"></span></span>
+          </a>
+          <div class="vt-meta">
+            <p class="vt-tags"><span class="vt-tag">Демо-проект</span>Мебель на заказ · Краснодар</p>
+            <h3>Тренд Мебель</h3>
+            <p class="vt-note">Сайт мастерской мебели на заказ: кухни, шкафы, расчет</p>
+            <a class="vt-open" href="https://skutinajulia.github.io/trend-mebel-krasnodar/" target="_blank" rel="noopener">Открыть сайт →</a>
+          </div>
+        </article>
+        <article class="vt-row" data-n="Цветы">
+          <a class="vt-dev" href="https://skutinajulia.github.io/elit-rouz-irkutsk/" target="_blank" rel="noopener" aria-label="Открыть сайт Элит Роуз">
+            <span class="vt-browser"><span class="vt-bar"><i></i><i></i><i></i><span class="vt-url">skutinajulia.github.io/elit-rouz-irkutsk</span></span><span class="vt-shot"><img src="../shots/vitrina/elit-rouz-irkutsk-d.webp" alt="" loading="lazy" width="1200" height="750"></span></span>
+            <span class="vt-phone"><span class="notch"></span><span class="scr"><img src="../shots/vitrina/elit-rouz-irkutsk-m.webp" alt="" loading="lazy"></span></span>
+          </a>
+          <div class="vt-meta">
+            <p class="vt-tags"><span class="vt-tag">Демо-проект</span>Цветы с доставкой · Иркутск</p>
+            <h3>Элит Роуз</h3>
+            <p class="vt-note">Сайт цветочного магазина: букеты, цены, доставка</p>
+            <a class="vt-open" href="https://skutinajulia.github.io/elit-rouz-irkutsk/" target="_blank" rel="noopener">Открыть сайт →</a>
+          </div>
+        </article>
+        <article class="vt-row" data-n="Мебель">
+          <a class="vt-dev" href="https://skutinajulia.github.io/mobili-italiani-krasnodar/" target="_blank" rel="noopener" aria-label="Открыть сайт Mobili-italiani">
+            <span class="vt-browser"><span class="vt-bar"><i></i><i></i><i></i><span class="vt-url">skutinajulia.github.io/mobili-italiani-krasnodar</span></span><span class="vt-shot"><img src="../shots/vitrina/mobili-italiani-krasnodar-d.webp" alt="" loading="lazy" width="1200" height="750"></span></span>
+            <span class="vt-phone"><span class="notch"></span><span class="scr"><img src="../shots/vitrina/mobili-italiani-krasnodar-m.webp" alt="" loading="lazy"></span></span>
+          </a>
+          <div class="vt-meta">
+            <p class="vt-tags"><span class="vt-tag">Демо-проект</span>Мебель на заказ · Краснодар</p>
+            <h3>Mobili-italiani</h3>
+            <p class="vt-note">Сайт мастерской мебели на заказ: кухни, шкафы, расчет</p>
+            <a class="vt-open" href="https://skutinajulia.github.io/mobili-italiani-krasnodar/" target="_blank" rel="noopener">Открыть сайт →</a>
+          </div>
+        </article>
+        <article class="vt-row" data-n="Цветы">
+          <a class="vt-dev" href="https://skutinajulia.github.io/vals-tsvetov-irkutsk/" target="_blank" rel="noopener" aria-label="Открыть сайт Вальс цветов">
+            <span class="vt-browser"><span class="vt-bar"><i></i><i></i><i></i><span class="vt-url">skutinajulia.github.io/vals-tsvetov-irkutsk</span></span><span class="vt-shot"><img src="../shots/vitrina/vals-tsvetov-irkutsk-d.webp" alt="" loading="lazy" width="1200" height="750"></span></span>
+            <span class="vt-phone"><span class="notch"></span><span class="scr"><img src="../shots/vitrina/vals-tsvetov-irkutsk-m.webp" alt="" loading="lazy"></span></span>
+          </a>
+          <div class="vt-meta">
+            <p class="vt-tags"><span class="vt-tag">Демо-проект</span>Цветы с доставкой · Иркутск</p>
+            <h3>Вальс цветов</h3>
+            <p class="vt-note">Сайт цветочного магазина: букеты, цены, доставка</p>
+            <a class="vt-open" href="https://skutinajulia.github.io/vals-tsvetov-irkutsk/" target="_blank" rel="noopener">Открыть сайт →</a>
+          </div>
+        </article>
+        <article class="vt-row" data-n="Цветы">
+          <a class="vt-dev" href="https://skutinajulia.github.io/botanik-irkutsk/" target="_blank" rel="noopener" aria-label="Открыть сайт Ботаник">
+            <span class="vt-browser"><span class="vt-bar"><i></i><i></i><i></i><span class="vt-url">skutinajulia.github.io/botanik-irkutsk</span></span><span class="vt-shot"><img src="../shots/vitrina/botanik-irkutsk-d.webp" alt="" loading="lazy" width="1200" height="750"></span></span>
+            <span class="vt-phone"><span class="notch"></span><span class="scr"><img src="../shots/vitrina/botanik-irkutsk-m.webp" alt="" loading="lazy"></span></span>
+          </a>
+          <div class="vt-meta">
+            <p class="vt-tags"><span class="vt-tag">Демо-проект</span>Цветы с доставкой · Иркутск</p>
+            <h3>Ботаник</h3>
+            <p class="vt-note">Сайт цветочного магазина: букеты, цены, доставка</p>
+            <a class="vt-open" href="https://skutinajulia.github.io/botanik-irkutsk/" target="_blank" rel="noopener">Открыть сайт →</a>
+          </div>
+        </article>
+        <article class="vt-row" data-n="Цветы">
+          <a class="vt-dev" href="https://skutinajulia.github.io/art-buket-irkutsk/" target="_blank" rel="noopener" aria-label="Открыть сайт Арт. Букет">
+            <span class="vt-browser"><span class="vt-bar"><i></i><i></i><i></i><span class="vt-url">skutinajulia.github.io/art-buket-irkutsk</span></span><span class="vt-shot"><img src="../shots/vitrina/art-buket-irkutsk-d.webp" alt="" loading="lazy" width="1200" height="750"></span></span>
+            <span class="vt-phone"><span class="notch"></span><span class="scr"><img src="../shots/vitrina/art-buket-irkutsk-m.webp" alt="" loading="lazy"></span></span>
+          </a>
+          <div class="vt-meta">
+            <p class="vt-tags"><span class="vt-tag">Демо-проект</span>Цветы с доставкой · Иркутск</p>
+            <h3>Арт. Букет</h3>
+            <p class="vt-note">Сайт цветочного магазина: букеты, цены, доставка</p>
+            <a class="vt-open" href="https://skutinajulia.github.io/art-buket-irkutsk/" target="_blank" rel="noopener">Открыть сайт →</a>
+          </div>
+        </article>
+        <article class="vt-row" data-n="Цветы">
+          <a class="vt-dev" href="https://skutinajulia.github.io/nika-irkutsk/" target="_blank" rel="noopener" aria-label="Открыть сайт Ника">
+            <span class="vt-browser"><span class="vt-bar"><i></i><i></i><i></i><span class="vt-url">skutinajulia.github.io/nika-irkutsk</span></span><span class="vt-shot"><img src="../shots/vitrina/nika-irkutsk-d.webp" alt="" loading="lazy" width="1200" height="750"></span></span>
+            <span class="vt-phone"><span class="notch"></span><span class="scr"><img src="../shots/vitrina/nika-irkutsk-m.webp" alt="" loading="lazy"></span></span>
+          </a>
+          <div class="vt-meta">
+            <p class="vt-tags"><span class="vt-tag">Демо-проект</span>Цветы с доставкой · Иркутск</p>
+            <h3>Ника</h3>
+            <p class="vt-note">Сайт цветочного магазина: букеты, цены, доставка</p>
+            <a class="vt-open" href="https://skutinajulia.github.io/nika-irkutsk/" target="_blank" rel="noopener">Открыть сайт →</a>
+          </div>
+        </article>
+        <article class="vt-row" data-n="Цветы">
+          <a class="vt-dev" href="https://skutinajulia.github.io/pioni-irkutsk/" target="_blank" rel="noopener" aria-label="Открыть сайт Пиони">
+            <span class="vt-browser"><span class="vt-bar"><i></i><i></i><i></i><span class="vt-url">skutinajulia.github.io/pioni-irkutsk</span></span><span class="vt-shot"><img src="../shots/vitrina/pioni-irkutsk-d.webp" alt="" loading="lazy" width="1200" height="750"></span></span>
+            <span class="vt-phone"><span class="notch"></span><span class="scr"><img src="../shots/vitrina/pioni-irkutsk-m.webp" alt="" loading="lazy"></span></span>
+          </a>
+          <div class="vt-meta">
+            <p class="vt-tags"><span class="vt-tag">Демо-проект</span>Цветы с доставкой · Иркутск</p>
+            <h3>Пиони</h3>
+            <p class="vt-note">Сайт цветочного магазина: букеты, цены, доставка</p>
+            <a class="vt-open" href="https://skutinajulia.github.io/pioni-irkutsk/" target="_blank" rel="noopener">Открыть сайт →</a>
+          </div>
+        </article>
+        <article class="vt-row" data-n="Цветы">
+          <a class="vt-dev" href="https://skutinajulia.github.io/moy-tsvetochny-irkutsk/" target="_blank" rel="noopener" aria-label="Открыть сайт Мой цветочный.рф">
+            <span class="vt-browser"><span class="vt-bar"><i></i><i></i><i></i><span class="vt-url">skutinajulia.github.io/moy-tsvetochny-irkutsk</span></span><span class="vt-shot"><img src="../shots/vitrina/moy-tsvetochny-irkutsk-d.webp" alt="" loading="lazy" width="1200" height="750"></span></span>
+            <span class="vt-phone"><span class="notch"></span><span class="scr"><img src="../shots/vitrina/moy-tsvetochny-irkutsk-m.webp" alt="" loading="lazy"></span></span>
+          </a>
+          <div class="vt-meta">
+            <p class="vt-tags"><span class="vt-tag">Демо-проект</span>Цветы с доставкой · Иркутск</p>
+            <h3>Мой цветочный.рф</h3>
+            <p class="vt-note">Сайт цветочного магазина: букеты, цены, доставка</p>
+            <a class="vt-open" href="https://skutinajulia.github.io/moy-tsvetochny-irkutsk/" target="_blank" rel="noopener">Открыть сайт →</a>
+          </div>
+        </article>
+        <article class="vt-row" data-n="Цветы">
+          <a class="vt-dev" href="https://skutinajulia.github.io/sakura-irkutsk/" target="_blank" rel="noopener" aria-label="Открыть сайт Сакура">
+            <span class="vt-browser"><span class="vt-bar"><i></i><i></i><i></i><span class="vt-url">skutinajulia.github.io/sakura-irkutsk</span></span><span class="vt-shot"><img src="../shots/vitrina/sakura-irkutsk-d.webp" alt="" loading="lazy" width="1200" height="750"></span></span>
+            <span class="vt-phone"><span class="notch"></span><span class="scr"><img src="../shots/vitrina/sakura-irkutsk-m.webp" alt="" loading="lazy"></span></span>
+          </a>
+          <div class="vt-meta">
+            <p class="vt-tags"><span class="vt-tag">Демо-проект</span>Цветы с доставкой · Иркутск</p>
+            <h3>Сакура</h3>
+            <p class="vt-note">Сайт цветочного магазина: букеты, цены, доставка</p>
+            <a class="vt-open" href="https://skutinajulia.github.io/sakura-irkutsk/" target="_blank" rel="noopener">Открыть сайт →</a>
+          </div>
+        </article>
+        <article class="vt-row" data-n="Цветы">
+          <a class="vt-dev" href="https://skutinajulia.github.io/murava-kurgan/" target="_blank" rel="noopener" aria-label="Открыть сайт Мурава">
+            <span class="vt-browser"><span class="vt-bar"><i></i><i></i><i></i><span class="vt-url">skutinajulia.github.io/murava-kurgan</span></span><span class="vt-shot"><img src="../shots/vitrina/murava-kurgan-d.webp" alt="" loading="lazy" width="1200" height="750"></span></span>
+            <span class="vt-phone"><span class="notch"></span><span class="scr"><img src="../shots/vitrina/murava-kurgan-m.webp" alt="" loading="lazy"></span></span>
+          </a>
+          <div class="vt-meta">
+            <p class="vt-tags"><span class="vt-tag">Демо-проект</span>Цветы с доставкой · Курган</p>
+            <h3>Мурава</h3>
+            <p class="vt-note">Сайт цветочного магазина: букеты, цены, доставка</p>
+            <a class="vt-open" href="https://skutinajulia.github.io/murava-kurgan/" target="_blank" rel="noopener">Открыть сайт →</a>
+          </div>
+        </article>
+        <article class="vt-row" data-n="Цветы">
+          <a class="vt-dev" href="https://skutinajulia.github.io/karban-irkutsk/" target="_blank" rel="noopener" aria-label="Открыть сайт Карбан">
+            <span class="vt-browser"><span class="vt-bar"><i></i><i></i><i></i><span class="vt-url">skutinajulia.github.io/karban-irkutsk</span></span><span class="vt-shot"><img src="../shots/vitrina/karban-irkutsk-d.webp" alt="" loading="lazy" width="1200" height="750"></span></span>
+            <span class="vt-phone"><span class="notch"></span><span class="scr"><img src="../shots/vitrina/karban-irkutsk-m.webp" alt="" loading="lazy"></span></span>
+          </a>
+          <div class="vt-meta">
+            <p class="vt-tags"><span class="vt-tag">Демо-проект</span>Цветы с доставкой · Иркутск</p>
+            <h3>Карбан</h3>
+            <p class="vt-note">Сайт цветочного магазина: букеты, цены, доставка</p>
+            <a class="vt-open" href="https://skutinajulia.github.io/karban-irkutsk/" target="_blank" rel="noopener">Открыть сайт →</a>
+          </div>
+        </article>
+      </div>
+      <button type="button" class="vt-more" hidden></button>
+
+      <div class="vt-block">
+        <p class="vt-eyebrow">Услуги и цены</p>
+        <h2>Что могу сделать для вас</h2>
+        <p class="vt-sub">Точную цену назову, когда увижу задачу. Демо – бесплатно.</p>
+        <ul class="vt-svc">
+          <li><b>Сайт-одностраничник</b><span>от 15&nbsp;000&nbsp;₽</span></li>
+          <li><b>Перенос на домен или Тильду</b><span>от 1&nbsp;000&nbsp;₽</span></li>
+          <li><b>Доработки сайта</b><span>от 1&nbsp;000&nbsp;₽</span></li>
+        </ul>
+      </div>
+
+      <div class="vt-block vt-block-line">
+        <p class="vt-eyebrow">Как работаю</p>
+        <h2>От демо до сайта на вашем домене</h2>
+        <ol class="vt-steps">
+          <li><b>Демо до оплаты</b><span>Собираю демо вашего сайта по карточке на Картах или вашему описанию.</span></li>
+          <li><b>Правки словами</b><span>Говорите, что поменять, – меняю в тот же день.</span></li>
+          <li><b>Ваш адрес</b><span>Переношу сайт на ваш домен или в вашу Тильду.</span></li>
+          <li><b>Готово</b><span>Сайт работает и приводит заявки. Остаюсь на связи.</span></li>
+        </ol>
+      </div>
+
+      <div class="vt-write">
+        <div>
+          <p class="vt-eyebrow">Написать</p>
+          <h2>Покажу демо вашего сайта</h2>
+          <p class="vt-write-lead">Нажмите на мессенджер – сообщение уже набрано, останется отправить. Отвечаю в течение дня.</p>
+          <a class="vt-tg" href="https://t.me/JuliaSkutina?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5!%20%D0%A5%D0%BE%D1%87%D1%83%20%D0%B7%D0%B0%D0%BA%D0%B0%D0%B7%D0%B0%D1%82%D1%8C%20%D1%81%D0%B0%D0%B9%D1%82.%20%D0%9F%D0%BE%D1%81%D0%BC%D0%BE%D1%82%D1%80%D0%B5%D0%BB%D0%B8%20%D0%B2%D0%B0%D1%88%D0%B8%20%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D1%8B%20%D0%BD%D0%B0%20%D0%B2%D0%B8%D1%82%D1%80%D0%B8%D0%BD%D0%B5%20%E2%80%93%20%D1%80%D0%B0%D1%81%D1%81%D0%BA%D0%B0%D0%B6%D0%B8%D1%82%D0%B5%2C%20%D0%BA%D0%B0%D0%BA%20%D0%BD%D0%B0%D1%87%D0%B0%D1%82%D1%8C%3F" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M21.9 4.3 18.6 20c-.2 1.1-.9 1.4-1.8.9l-5-3.7-2.4 2.3c-.3.3-.5.5-1 .5l.4-5.1 9.3-8.4c.4-.4-.1-.6-.6-.2L6 13.5l-5-1.6c-1.1-.3-1.1-1.1.2-1.6L20.5 2.9c.9-.3 1.7.2 1.4 1.4z"/></svg>Telegram</a>
+        </div>
+        <div class="vt-chat" aria-hidden="true">
+          <div class="vt-chat-head"><img src="../avatar-pink.webp?v=6" alt="" width="44" height="44"><div><b>Юлия Скутина</b><small>в сети</small></div></div>
+          <div class="vt-chat-body">
+            <span class="vt-day">Сегодня</span>
+            <p class="vt-msg">Здравствуйте! Хочу заказать сайт. Посмотрели ваши работы на витрине – расскажите, как начать?<small>сейчас ✓✓</small></p>
+            <span class="vt-typing"><i></i><i></i><i></i></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- /ВИТРИНА -->
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>Юлия Скутина · сайты и реклама в Яндекс.Директ</span>
+    <span><a href="tel:+79638635841">+7 (963) 863-58-41</a> · <a href="https://t.me/JuliaSkutina" target="_blank" rel="noopener">Telegram</a> · <a href="../politika.html">Политика конфиденциальности</a></span>
+  </div>
+</footer>
+
+<script>
+/* веер телефонов: сдвиг прокрутки = высота скриншота минус экран, крутится только на виду */
+(function(){
+  var fan=document.querySelector('.fan');if(!fan)return;
+  function fit(img){var h=img.getBoundingClientRect().height,s=img.parentNode.getBoundingClientRect().height;if(h>s)img.style.setProperty('--sh',-((h-s)/h)*100+'%')}
+  fan.querySelectorAll('img').forEach(function(img){if(img.complete)fit(img);else img.addEventListener('load',function(){fit(img)})});
+  new IntersectionObserver(function(es){es.forEach(function(e){fan.classList.toggle('live',e.isIntersecting)})},{threshold:.15}).observe(fan);
+})();
+/* окно Telegram: сообщение и «печатает» появляются, когда блок на экране */
+(function(){
+  var chat=document.querySelector('.vt-chat');if(!chat)return;
+  new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){chat.classList.remove('go');void chat.offsetWidth;chat.classList.add('go')}})},{threshold:.5}).observe(chat);
+})();
+/* витрина: фильтр, «показать еще», чередование сторон и живые телефоны */
+(function(){
+  var root=document.getElementById('vitrina');if(!root)return;
+  var STEP=10,chips=root.querySelectorAll('.vt-chip'),rows=[].slice.call(root.querySelectorAll('.vt-row')),more=root.querySelector('.vt-more'),f='',limit=STEP;
+  function word(n){var a=n%10,b=n%100;return a===1&&b!==11?'сайт':a>=2&&a<=4&&(b<10||b>=20)?'сайта':'сайтов'}
+  function fit(img){var h=img.getBoundingClientRect().height,s=img.parentNode.getBoundingClientRect().height;if(h>s)img.style.setProperty('--sh',-((h-s)/h)*100+'%')}
+  function apply(){
+    var shown=0,match=0;
+    rows.forEach(function(r){
+      var ok=!f||r.getAttribute('data-n')===f;if(ok)match++;
+      var vis=ok&&(!!f||shown<limit);r.hidden=!vis;
+      if(vis){r.classList.toggle('flip',shown%2===1);r.classList.toggle('first',shown===0);shown++}
+    });
+    var left=Math.min(match-shown,STEP);more.hidden=left<=0;more.textContent='Показать еще '+left+' '+word(left);
+    rows.forEach(function(r){if(!r.hidden)fit(r.querySelector('.scr img'))});
+  }
+  chips.forEach(function(ch){ch.addEventListener('click',function(){
+    f=ch.getAttribute('data-f');limit=STEP;
+    chips.forEach(function(c){c.setAttribute('aria-pressed',c===ch?'true':'false')});apply();
+  })});
+  more.addEventListener('click',function(){limit+=STEP;apply()});
+  rows.forEach(function(r,i){var img=r.querySelector('.scr img');img.style.setProperty('--dur',(18+i%3*3)+'s');img.addEventListener('load',function(){fit(img)})});
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){e.target.classList.toggle('live',e.isIntersecting)})},{threshold:.15});
+  rows.forEach(function(r){io.observe(r)});
+  window.addEventListener('resize',function(){rows.forEach(function(r){if(!r.hidden)fit(r.querySelector('.scr img'))})});
+  apply();
+})();
+</script>
+</body>
+</html>
