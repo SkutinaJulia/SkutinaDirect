@@ -56,7 +56,18 @@ main, .s-foot, .s-hero { position: relative; z-index: 0; }
 .s-bar__brand i::before { content: "☾"; font-size: 1.2em; }
 h1, h2, h3 { letter-spacing: 0; }
 .s-hero h1 { line-height: 1.12; }
-@media (min-width: 961px) { .s-hero h1 { --h1k: .86; } }
+/* первый экран на компьютере: текст мельче, фото тянется до низа формы */
+@media (min-width: 961px) {
+  .s-hero { align-items: stretch; }
+  .s-hero h1 { --h1k: .76; }
+  .s-hero .s-lead { font-size: 1rem; margin-top: 14px; }
+  .s-hero .s-ticks { margin-top: 18px; gap: 9px; font-size: .95rem; }
+  .s-hero__text { display: flex; flex-direction: column; }
+  .s-hero__photo { flex: 1; display: flex; flex-direction: column; min-height: 150px; margin-top: 22px; position: relative; }
+  .s-hero__photo figcaption { position: absolute; left: 1px; right: 1px; bottom: 1px; margin: 0; padding: 26px 14px 10px; border-radius: 0 0 var(--r) var(--r);
+    background: linear-gradient(transparent, rgb(6 10 30 / .82)); color: #eef0fa; font-size: .8rem; }
+  .s-hero__photo img { position: absolute; inset: 0; width: 100%; height: 100%; aspect-ratio: auto; }
+}
 .s-section__head h2::before { content: "✦"; color: var(--c-accent); font-size: .55em; vertical-align: .35em; margin-right: .45em; }
 .s-widget, .s-steps__item, .s-promises li, .s-incl > div, .s-faq details, .s-contacts { background: rgb(21 33 77 / .72); -webkit-backdrop-filter: blur(6px); backdrop-filter: blur(6px); border: 1px solid var(--hair); }
 .s-widget { box-shadow: 0 0 0 1px rgb(247 201 85 / .14), 0 24px 70px -20px rgb(0 0 0 / .7), 0 0 80px -30px rgb(247 201 85 / .35); }
@@ -81,6 +92,8 @@ h1, h2, h3 { letter-spacing: 0; }
 .s-widget fieldset:first-of-type .s-chips { flex-wrap: nowrap; }
 .s-widget fieldset:first-of-type .s-chip { flex: 1 1 0; min-width: 0; flex-direction: column; justify-content: center; gap: 2px; padding: 10px 6px; text-align: center; }
 .s-widget fieldset:first-of-type .s-chip__p { font-size: .92em; }
+/* подписи полей формы – желтые */
+.s-widget legend { color: var(--c-accent); }
 /* повод и картинки – две колонки */
 .s-widget fieldset:nth-of-type(2) .s-chips, .s-widget fieldset:nth-of-type(3) .s-chips { display: grid; grid-template-columns: 1fr 1fr; }
 .s-widget fieldset:nth-of-type(2) .s-chip, .s-widget fieldset:nth-of-type(3) .s-chip { justify-content: center; text-align: center; padding: 10px 8px; }
