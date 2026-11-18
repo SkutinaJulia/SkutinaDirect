@@ -83,7 +83,7 @@ h1, h2, h3 { letter-spacing: 0; }
 .s-faq, .s-contacts { max-width: none; }
 /* «Сколько стоит» – одной колонкой, группы жирными заголовками */
 .s-board { grid-template-columns: 1fr; gap: 28px; }
-.s-board__title { font: 700 1.25rem/1.2 var(--f-display); letter-spacing: 0; text-transform: none; color: var(--c-ink); margin: 0 0 4px; }
+.s-board__title { font: 700 1.25rem/1.2 var(--f-display); letter-spacing: 0; text-transform: none; color: var(--c-accent); margin: 0 0 4px; }
 .s-board__name { font-size: 1.05rem; }
 .k-final p { font-size: 1.12rem; line-height: 1.55; }
 .k-final .k-final__note { margin-top: 12px; font-size: .95rem; color: var(--c-ink-soft); }
@@ -154,7 +154,7 @@ html::-webkit-scrollbar-corner { background: transparent; }
 .s-contacts__actions .s-btn:last-child { grid-column: 1 / -1; }
 /* нижний блок: все кнопки с обводкой, как Telegram; желтая заливка по очереди переходит между ними */
 .s-contacts__actions .s-btn { background: transparent; color: var(--c-ink); border: 1.5px solid var(--c-accent);
-  box-shadow: 0 0 14px -2px rgb(247 201 85 / .6), inset 0 0 10px -4px rgb(247 201 85 / .45); transition: background-color .6s ease, color .6s ease, box-shadow .6s ease; }
+  box-shadow: 0 0 14px -2px rgb(247 201 85 / .6), inset 0 0 10px -4px rgb(247 201 85 / .45); transition: background-color 1.4s ease-in-out, color 1.4s ease-in-out, box-shadow 1.4s ease-in-out; }
 .s-contacts__actions .s-btn.k-on, .s-contacts__actions .s-btn:hover { background: var(--c-accent); color: var(--c-accent-ink); box-shadow: 0 0 24px -4px rgb(247 201 85 / .75); }
 @media (max-width: 640px) { .s-contacts__actions { grid-template-columns: 1fr; } }
 .k-covers { position: relative; display: block; aspect-ratio: 4 / 3; border-radius: var(--r); overflow: hidden; }
@@ -192,7 +192,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const btns = [...document.querySelectorAll(".s-contacts__actions .s-btn")]; if (!btns.length) return;
   let k = 0; btns[0].classList.add("k-on");
   if (!matchMedia("(prefers-reduced-motion: no-preference)").matches) return;
-  setInterval(() => { btns[k].classList.remove("k-on"); k = (k + 1) % btns.length; btns[k].classList.add("k-on"); }, 1800);
+  setInterval(() => { btns[k].classList.remove("k-on"); k = (k + 1) % btns.length; btns[k].classList.add("k-on"); }, 2600);
 });
 // окна «Подробнее» о сказках
 document.addEventListener("click", (e) => {
@@ -264,7 +264,7 @@ document.addEventListener("click", async (e) => {
   <section class="s-section s-reveal k-story">
     <span class="k-moon" aria-hidden="true"></span>
     <header class="s-section__head"><h2>Как все начиналось</h2></header>
-    <p>Каждый вечер я писала сказки для своей шестилетней дочки – про ее любимые игрушки, с картинками. Когда она слышала свое имя и узнавала знакомые моменты, она восторженно переглядывалась со своей старшей сестрой, а глаза так и горели! И каждый день она просила меня написать новую сказку.</p>
+    <p>Каждый вечер я читала сказки, которые я написала для своей шестилетней дочки – про ее любимые игрушки, с картинками. Когда она слышала свое имя и узнавала знакомые моменты, она восторженно переглядывалась со своей старшей сестрой, а глаза так и горели! И каждый день она просила меня написать новую сказку.</p>
     <p>Сказки на заказ я начала делать совсем недавно: очень хочется, чтобы так же радовались и другие дети.</p>
   </section>
 
