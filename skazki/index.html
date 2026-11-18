@@ -66,7 +66,7 @@ h1, h2, h3 { letter-spacing: 0; }
   .s-hero__photo { flex: 1; display: flex; flex-direction: column; min-height: 150px; margin-top: 22px; position: relative; }
   .s-hero__photo figcaption { position: absolute; left: 1px; right: 1px; bottom: 1px; margin: 0; padding: 26px 14px 10px; border-radius: 0 0 var(--r) var(--r);
     background: linear-gradient(transparent, rgb(6 10 30 / .82)); color: #eef0fa; font-size: .8rem; }
-  .s-hero__photo img { position: absolute; inset: 0; width: 100%; height: 100%; aspect-ratio: auto; }
+  .s-hero__photo .k-covers { position: absolute; inset: 0; aspect-ratio: auto; }
 }
 .s-section__head h2::before { content: "✦"; color: var(--c-accent); font-size: .55em; vertical-align: .35em; margin-right: .45em; }
 .s-widget, .s-steps__item, .s-promises li, .s-incl > div, .s-faq details, .s-contacts { background: rgb(21 33 77 / .72); -webkit-backdrop-filter: blur(6px); backdrop-filter: blur(6px); border: 1px solid var(--hair); }
@@ -157,8 +157,9 @@ html::-webkit-scrollbar-corner { background: transparent; }
   box-shadow: 0 0 14px -2px rgb(247 201 85 / .6), inset 0 0 10px -4px rgb(247 201 85 / .45); transition: background-color .6s ease, color .6s ease, box-shadow .6s ease; }
 .s-contacts__actions .s-btn.k-on, .s-contacts__actions .s-btn:hover { background: var(--c-accent); color: var(--c-accent-ink); box-shadow: 0 0 24px -4px rgb(247 201 85 / .75); }
 @media (max-width: 640px) { .s-contacts__actions { grid-template-columns: 1fr; } }
-.s-hero__photo img { aspect-ratio: 4 / 3; transition: opacity .22s ease; }
-.s-hero__photo img.k-fade { opacity: 0; }
+.k-covers { position: relative; display: block; aspect-ratio: 4 / 3; border-radius: var(--r); overflow: hidden; }
+.s-hero__photo .k-covers img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; aspect-ratio: auto; border-radius: var(--r); opacity: 0; transition: opacity .35s ease; }
+.s-hero__photo .k-covers img.is-on { opacity: 1; }
 .s-hero__photo figcaption { margin-top: 10px; }
 @media (max-width: 960px) { .s-hero__photo { display: block; margin-top: 22px; } }
 @media (max-width: 900px) { .k-ex { grid-template-columns: repeat(2, 1fr); } .k-ex li:first-child { grid-column: 1 / -1; } .k-ex li:first-child img { aspect-ratio: 4 / 3; object-position: 50% 30%; } }
@@ -199,16 +200,15 @@ document.addEventListener("click", (e) => {
   const c = e.target.closest("[data-k-close]"); if (c) { c.closest("dialog")?.close(); return; }
   if (e.target.tagName === "DIALOG") e.target.close();
 });
-// смена обложки по стилю
+// смена обложки по стилю: все обложки уже загружены и лежат друг на друге, переключаем видимость
 document.addEventListener("DOMContentLoaded", () => {
   const fig = document.querySelector("[data-k-covers]"); if (!fig) return;
-  const covers = JSON.parse(fig.dataset.kCovers), img = fig.querySelector("img"), cap = fig.querySelector("figcaption");
-  addEventListener("load", () => covers.forEach(([f]) => { new Image().src = "assets/" + f + ".webp"; }));
+  const covers = JSON.parse(fig.dataset.kCovers), imgs = fig.querySelectorAll(".k-covers img"), cap = fig.querySelector("figcaption");
   document.addEventListener("change", (e) => {
     if (e.target.name !== "stil") return;
-    const [f, st, title, pos] = covers[+e.target.value] || covers[1];
-    img.classList.add("k-fade");
-    setTimeout(() => { img.src = "assets/" + f + ".webp"; img.style.objectPosition = pos; img.alt = "Обложка сказки «" + title + "», стиль «" + st + "»"; cap.textContent = "Стиль «" + st + "» · сказка «" + title + "»"; img.classList.remove("k-fade"); }, 220);
+    const n = covers[+e.target.value] ? +e.target.value : 1, [, st, title] = covers[n];
+    imgs.forEach((im, i) => im.classList.toggle("is-on", i === n));
+    cap.textContent = "Стиль «" + st + "» · сказка «" + title + "»";
   });
 });
 // «мультфильм 3d» в сообщении: шаблон переводит выбор в нижний регистр
@@ -241,7 +241,7 @@ document.addEventListener("click", async (e) => {
       <p class="s-lead">Пишу историю с нуля: имя, внешность, любимая игрушка и ваш повод. Сначала присылаю готовую сказку с пометкой «образец», а оплачиваете, только когда она вам понравилась.</p>
       <ul class="s-ticks"><li>Без предоплаты</li><li>Образец через сутки</li><li>Герой похож на ребенка</li></ul>
       
-      <figure class="s-hero__photo" data-k-covers='[["st-akvarel","Акварель","Варя и добрая ночь","50% 62%"],["hero","Мультфильм 3D","Ева и северное сияние","50% 62%"],["st-sovetskaya","Как в советских книжках","Соня и звездочка Деда Мороза","50% 62%"],["st-anime","Мягкое аниме","Кристина и пять звездочек","50% 38%"]]'><img class="" src="assets/hero.webp" alt="Обложка сказки «Ева и северное сияние»: девочка в розовой куртке едет на санях с хаски под северным сиянием" decoding="async" style="object-position:50% 62%"><figcaption>Стиль «Мультфильм 3D» · сказка «Ева и северное сияние»</figcaption></figure>
+      <figure class="s-hero__photo" data-k-covers='[["st-akvarel","Акварель","Варя и добрая ночь","50% 62%"],["hero","Мультфильм 3D","Ева и северное сияние","50% 62%"],["st-sovetskaya","Как в советских книжках","Соня и звездочка Деда Мороза","50% 62%"],["st-anime","Мягкое аниме","Кристина и пять звездочек","50% 38%"]]'><span class="k-covers"><img class="" src="assets/st-akvarel.webp" alt="Обложка сказки «Варя и добрая ночь», стиль «Акварель»" style="object-position:50% 62%" fetchpriority="low" decoding="async"><img class="is-on" src="assets/hero.webp" alt="Обложка сказки «Ева и северное сияние», стиль «Мультфильм 3D»" style="object-position:50% 62%" fetchpriority="high" decoding="async"><img class="" src="assets/st-sovetskaya.webp" alt="Обложка сказки «Соня и звездочка Деда Мороза», стиль «Как в советских книжках»" style="object-position:50% 62%" fetchpriority="low" decoding="async"><img class="" src="assets/st-anime.webp" alt="Обложка сказки «Кристина и пять звездочек», стиль «Мягкое аниме»" style="object-position:50% 38%" fetchpriority="low" decoding="async"></span><figcaption>Стиль «Мультфильм 3D» · сказка «Ева и северное сияние»</figcaption></figure>
     </div>
     <div class="s-hero__widget" id="widget"><form class="s-widget" data-s-calc data-base="0" data-min="0" data-min-note="минимальный заказ" data-per="{}" data-message="Здравствуйте! Хочу заказать сказку: {выбор}. Стоимость {итого}. С чего начнем?" onsubmit="return false">
       <h2 class="s-widget__title">Собрать сказку</h2>
