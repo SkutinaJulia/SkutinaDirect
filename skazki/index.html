@@ -56,6 +56,7 @@ main, .s-foot, .s-hero { position: relative; z-index: 0; }
 .s-bar__brand i::before { content: "☾"; font-size: 1.2em; }
 h1, h2, h3 { letter-spacing: 0; }
 .s-hero h1 { line-height: 1.12; }
+@media (min-width: 961px) { .s-hero h1 { --h1k: .86; } }
 .s-section__head h2::before { content: "✦"; color: var(--c-accent); font-size: .55em; vertical-align: .35em; margin-right: .45em; }
 .s-widget, .s-steps__item, .s-promises li, .s-incl > div, .s-faq details, .s-contacts { background: rgb(21 33 77 / .72); -webkit-backdrop-filter: blur(6px); backdrop-filter: blur(6px); border: 1px solid var(--hair); }
 .s-widget { box-shadow: 0 0 0 1px rgb(247 201 85 / .14), 0 24px 70px -20px rgb(0 0 0 / .7), 0 0 80px -30px rgb(247 201 85 / .35); }
@@ -80,9 +81,9 @@ h1, h2, h3 { letter-spacing: 0; }
 .s-widget fieldset:first-of-type .s-chips { flex-wrap: nowrap; }
 .s-widget fieldset:first-of-type .s-chip { flex: 1 1 0; min-width: 0; flex-direction: column; justify-content: center; gap: 2px; padding: 10px 6px; text-align: center; }
 .s-widget fieldset:first-of-type .s-chip__p { font-size: .92em; }
-/* повод – две колонки */
-.s-widget fieldset:nth-of-type(2) .s-chips { display: grid; grid-template-columns: 1fr 1fr; }
-.s-widget fieldset:nth-of-type(2) .s-chip { justify-content: center; text-align: center; padding: 10px 8px; }
+/* повод и картинки – две колонки */
+.s-widget fieldset:nth-of-type(2) .s-chips, .s-widget fieldset:nth-of-type(3) .s-chips { display: grid; grid-template-columns: 1fr 1fr; }
+.s-widget fieldset:nth-of-type(2) .s-chip, .s-widget fieldset:nth-of-type(3) .s-chip { justify-content: center; text-align: center; padding: 10px 8px; }
 .s-btn { box-shadow: 0 0 24px -6px rgb(247 201 85 / .55); }
 .s-btn--ghost { box-shadow: none; }
 .s-btn[data-s-msg="telegram"] { border: 1.5px solid var(--c-accent); color: var(--c-ink); box-shadow: 0 0 14px -2px rgb(247 201 85 / .6), inset 0 0 10px -4px rgb(247 201 85 / .45); }
@@ -250,7 +251,7 @@ document.addEventListener("click", async (e) => {
   <section class="s-section s-reveal k-story">
     <span class="k-moon" aria-hidden="true"></span>
     <header class="s-section__head"><h2>Как все начиналось</h2></header>
-    <p>Каждый вечер я писала сказки для своей шестилетней дочки – про ее любимые игрушки, с картинками. Когда она слышала свое имя и узнавала знакомые моменты, она восторженно переглядывалась со своей старшей сестрой, а глаза так и горели. И каждый вечер она просила новую сказку.</p>
+    <p>Каждый вечер я писала сказки для своей шестилетней дочки – про ее любимые игрушки, с картинками. Когда она слышала свое имя и узнавала знакомые моменты, она восторженно переглядывалась со своей старшей сестрой, а глаза так и горели! И каждый вечер она просила новую сказку.</p>
     <p>Сказки на заказ я начала делать совсем недавно: очень хочется, чтобы так же радовались и другие дети.</p>
   </section>
 
