@@ -308,6 +308,14 @@ document.addEventListener("DOMContentLoaded", () => {
 // «мультфильм 3d» в сообщении: шаблон переводит выбор в нижний регистр
 const fix3d = () => { const b = document.querySelector("[data-s-bubble]"); if (b && /3d/.test(b.textContent)) b.textContent = b.textContent.replace(/3d/g, "3D"); };
 document.addEventListener("DOMContentLoaded", () => { const f = document.querySelector("[data-s-calc]"); if (f) { f.addEventListener("change", () => setTimeout(fix3d)); setTimeout(fix3d, 50); } });
+// Telegram: открываем чат сразу с текстом заявки (t.me/<ник>?text=…) – иначе Telegram подставляет старый черновик, например с витрины
+document.addEventListener("click", async (e) => {
+  const a = e.target.closest('[data-s-msg="telegram"]'); if (!a) return;
+  e.preventDefault(); e.stopImmediatePropagation();
+  const msg = (document.querySelector("[data-s-bubble]") || {}).textContent || "Здравствуйте! Хочу заказать сказку.";
+  try { await navigator.clipboard.writeText(msg); } catch (_) {}
+  window.open("https://t.me/" + document.body.dataset.tg.replace(/^@/, "") + "?text=" + encodeURIComponent(msg), "_blank", "noopener");
+}, true);
 document.addEventListener("click", async (e) => {
   const a = e.target.closest('[data-s-msg="max"]'); if (!a) return;
   e.preventDefault(); e.stopImmediatePropagation();
