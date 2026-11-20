@@ -20,6 +20,25 @@
 :root { --c-canvas: #1a1420; --c-surface: #241b2b; --c-ink: #f1ebe4; --c-ink-soft: #b4a9b0; --c-accent: #e4b45f; --c-accent-ink: #241608; --c-accent-deep: #e4b45f; --f-display: "Tenor Sans", "Trebuchet MS", "Segoe UI", system-ui, sans-serif; --f-text: "Onest", "Segoe UI", system-ui, sans-serif; --h1k: 1; }
 </style>
 <link rel="stylesheet" href="style-prod.css">
+<!-- Yandex.Metrika counter -->
+<script type="text/javascript">
+    (function(m,e,t,r,i,k,a){
+        m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+        m[i].l=1*new Date();
+        for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+        k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)
+    })(window, document,'script','https://mc.yandex.ru/metrika/tag.js?id=114388146', 'ym');
+
+    ym(114388146, 'init', {ssr:true, webvisor:true, clickmap:true, ecommerce:"dataLayer", referrer: document.referrer, url: location.href, accurateTrackBounce:true, trackLinks:true});
+</script>
+<!-- /Yandex.Metrika counter -->
+<script>
+// цели: max_click, telegram_click (заявка), skazka_podrobnee (открыли пример)
+document.addEventListener("click", (e) => {
+  const t = e.target.closest('[data-s-msg="max"], [data-s-msg="telegram"], [data-k-open]'); if (!t || typeof ym !== "function") return;
+  ym(114388146, "reachGoal", t.dataset.kOpen ? "skazka_podrobnee" : t.dataset.sMsg + "_click");
+}, true);
+</script>
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@500;700&display=swap" rel="stylesheet">
 <style>
@@ -548,5 +567,6 @@ document.addEventListener("click", async (e) => {
 <footer class="s-foot"><p><span>Сказочная мастерская</span><span class="k-dot"> · </span><span>Персональные сказки с картинками для детей</span></p><p><span>ИП Скутина Юлия Владимировна</span><span class="k-dot"> · </span><span>ИНН 450147067141</span></p></footer>
 <nav class="s-dock" aria-label="Быстрая связь"><a class="s-btn" href="#widget">Заказать сказку</a><a class="s-btn s-btn--ghost" data-s-msg="max" href="#">Написать в MAX</a></nav>
 <script src="style.js" defer></script>
+<noscript><div><img src="https://mc.yandex.ru/watch/114388146" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
 </body>
 </html>
